@@ -1,23 +1,23 @@
 ++ date +%s
-+ echo -n ' 1652842613,'
++ echo -n ' 1660052002,'
 + set +x
 
 Currently Loaded Modules:
   1) cmake/3.22.0         11) zlib/1.2.11    21) g2tmpl/1.10.0
-  2) python/3.7.9         12) png/1.6.35     22) ip/3.3.3
-  3) ncarenv/1.3          13) hdf5/1.10.8    23) sp/2.3.3
-  4) intel/2021.2         14) netcdf/4.7.4   24) w3nco/2.4.1
-  5) mpt/2.22             15) pio/2.5.2      25) gftl-shared/v1.3.3
+  2) python/3.7.9         12) libpng/1.6.37  22) ip/3.3.3
+  3) ncarenv/1.3          13) hdf5/1.10.6    23) sp/2.3.3
+  4) intel/2022.1         14) netcdf/4.7.4   24) w3nco/2.4.1
+  5) mpt/2.25             15) pio/2.5.3      25) gftl-shared/v1.5.0
   6) ncarcompilers/0.5.0  16) esmf/8.3.0b09  26) yafyaml/v0.5.1
-  7) hpc/1.2.0            17) fms/2022.01    27) mapl/2.11.0-esmf-8.3.0b09
-  8) hpc-intel/2021.2     18) bacio/2.4.1    28) ufs_common
-  9) hpc-mpt/2.22         19) crtm/2.3.0     29) modules.fv3
- 10) jasper/2.0.22        20) g2/3.4.2
+  7) hpc/1.2.0            17) fms/2022.01    27) mapl/2.22.0-esmf-8.3.0b09
+  8) hpc-intel/2022.1     18) bacio/2.4.1    28) ufs_common
+  9) hpc-mpt/2.25         19) crtm/2.3.0     29) modules.fv3
+ 10) jasper/2.0.25        20) g2/3.4.5
 
  
 
 ++ date
-+ echo 'Model started:  ' Tue May 17 20:57:04 MDT 2022
++ echo 'Model started:  ' Tue Aug 9 07:33:39 MDT 2022
 + export MPI_TYPE_DEPTH=20
 + MPI_TYPE_DEPTH=20
 + export OMP_STACKSIZE=512M
@@ -26,43 +26,26 @@ Currently Loaded Modules:
 + OMP_NUM_THREADS=1
 + export ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
 + ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
++ export ESMF_RUNTIME_PROFILE=ON
++ ESMF_RUNTIME_PROFILE=ON
++ export ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
++ ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
 + sync
 + sleep 1
-+ mpiexec_mpt -p %g: -np 200 ./fv3.exe
-150: (MOM_cap:InitializeAdvertise)current time: y,m,d-        2021           3
-150:          22 h,m,s=           6           0           0
-150: (MOM_cap:InitializeAdvertise)start time: y,m,d-        2021           3
-150:          22 h,m,s=           6           0           0
-150:
-150:WARNING from PE     0: MOM_obsolete_params: ETA_TOLERANCE_AUX is an obsolete run-time flag.
-150:
-150:
-150:WARNING from PE     0: MEKE_init: Initializing MEKE with a local equilibrium balance.
-150:
-150:
-150:WARNING from PE     0: set_diffusivity_init: SIMPLE_TKE_TO_KD can not be used reliably with USE_REGRIDDING.
-150:
-150:
-150:WARNING from PE     0: Unused line in INPUT/MOM_input : ODA_INCUPD_FILE = "mom6_increment.nc"
-150:
-150:
-150:WARNING from PE     0: Unused line in INPUT/MOM_input : ODA_TEMPINC_VAR = "pt_inc"
-150:
-150:
-150:WARNING from PE     0: Unused line in INPUT/MOM_input : ODA_SALTINC_VAR = "s_inc"
-150:
-150:
-150:WARNING from PE     0: Unused line in INPUT/MOM_input : ODA_THK_VAR = "h_fg"
-150:
-150:
-150:WARNING from PE     0: Unused line in INPUT/MOM_input : ODA_UINC_VAR = "u_inc"
-150:
-150:
-150:WARNING from PE     0: Unused line in INPUT/MOM_input : ODA_VINC_VAR = "v_inc"
-150:
-150:
-150:WARNING from PE     0: Unused line in INPUT/MOM_input : ODA_INCUPD_NHOURS = 6
-150:
++ mpiexec_mpt -p %g: -np 1764 ./fv3.exe
+1392: (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
+1392:           1 h,m,s=           0           0           0
+1392: (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
+1392:           1 h,m,s=           0           0           0
+1392:
+1392:WARNING from PE     0: MOM_obsolete_params: ETA_TOLERANCE_AUX is an obsolete run-time flag.
+1392:
+1392:
+1392:WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
+1392:
+1392:
+1392:WARNING from PE     0: set_diffusivity_init: SIMPLE_TKE_TO_KD can not be used reliably with USE_REGRIDDING.
+1392:
 0:Using non-aerosol-aware version of Thompson microphysics
 0:   calling table_ccnAct routine
 0:   creating qc collision eff tables
@@ -71,4 +54,30 @@ Currently Loaded Modules:
 0:   creating rain collecting graupel table
 0:   creating freezing of water drops table
 0:  ... DONE microphysical lookup tables
-MPT: shepherd terminated: r14i3n0.ib0.cheyenne.ucar.edu - job aborting
+692:MPT ERROR: Rank 692(g:692) received signal SIGSEGV(11).
+692:	Process ID: 62495, Host: r1i6n23, Program: /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8/fv3.exe
+692:	MPT Version: HPE MPT 2.25  08/14/21 03:05:20
+692:
+692:MPT: --------stack traceback-------
+546:MPT ERROR: Rank 546(g:546) received signal SIGSEGV(11).
+546:	Process ID: 53287, Host: r1i6n34, Program: /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8/fv3.exe
+546:	MPT Version: HPE MPT 2.25  08/14/21 03:05:20
+546:
+546:MPT: --------stack traceback-------
+692:
+692:MPT: -----stack traceback ends-----
+692:MPT: On host r1i6n23, Program /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8/fv3.exe, Rank 692, Process 62495: Dumping core on signal SIGSEGV(11) into directory /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8
+546:
+546:MPT: -----stack traceback ends-----
+546:MPT: On host r1i6n34, Program /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8/fv3.exe, Rank 546, Process 53287: Dumping core on signal SIGSEGV(11) into directory /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8
+954:MPT ERROR: Rank 954(g:954) received signal SIGSEGV(11).
+954:	Process ID: 55040, Host: r1i2n19, Program: /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8/fv3.exe
+954:	MPT Version: HPE MPT 2.25  08/14/21 03:05:20
+954:
+954:MPT: --------stack traceback-------
+954:
+954:MPT: -----stack traceback ends-----
+954:MPT: On host r1i2n19, Program /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8/fv3.exe, Rank 954, Process 55040: Dumping core on signal SIGSEGV(11) into directory /glade/scratch/jongkim/rt-1305/jongkim/FV3_RT/rt_16503/cpld_bmark_esmfthreads_p8
+-1:MPT ERROR: MPI_COMM_WORLD rank 692 has terminated without calling MPI_Finalize()
+-1:	aborting job
+MPT: Received signal 11
