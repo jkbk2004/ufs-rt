@@ -48,4 +48,5 @@ jobs:
 
         cd ${{ github.workspace }}/tests/ci
         url=$GITHUB_API_URL/repos/$GITHUB_REPOSITORY
-        pr_number=${{ github.event.pull_request.number }}
+        pr_number=$(curl -sS -H $app $url/pulls)
+        #pr_number=${{ github.event.pull_request.number }}
