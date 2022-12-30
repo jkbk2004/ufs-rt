@@ -48,20 +48,3 @@ jobs:
 
         cd ${{ github.workspace }}/tests/ci
         url=$GITHUB_API_URL/repos/$GITHUB_REPOSITORY
-        pr_number=$(curl -sS -H $app $url/pulls | jq -r '.[] | select(.head.sha == "'"$head_sha"'") | .number')
-        pr_uid=${{ github.event.workflow_run.head_repository.owner.login }}
-        comment="$(./repo_check.sh $pr_uid 2>/dev/null)"
-#        echo "comment is $comment"
-
-#        if [[ -n $comment ]]; then
-#          curl -sS -X POST -H $app -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-#            $url/issues/$pr_number/comments -d '{"body": "'"${comment}"'"}'
-#          echo -n "failure" >~/repocheck_file
-#        else
-#          echo -n "success" >~/repocheck_file
-#        fi
-
-#    - uses: actions/cache@v2
-#      with:
-#        path: ~/repocheck_file
-#        key: repocheck-${{ github.event.workflow_run.id }}
