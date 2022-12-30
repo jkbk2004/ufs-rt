@@ -8,9 +8,6 @@ env:
   app: Accept:application/vnd.github.v3+json
   base_url: $GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/runs
   AUTH: ${{ secrets.GITHUB_TOKEN }}
-  aws_instance_id: ${{ secrets.AWS_INSTANCE_ID }}
-  no_instances: 10
-
 
 jobs:
   pre:
