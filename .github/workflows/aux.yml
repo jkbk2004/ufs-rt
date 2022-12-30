@@ -48,7 +48,8 @@ jobs:
 
         cd ${{ github.workspace }}/tests/ci
         url=$GITHUB_API_URL/repos/$GITHUB_REPOSITORY
-        pr_number=${{ github.event.pull_request.number }}
+        pr_number=$(curl -sS -H $app $url/pulls \
+          | jq -r '.[] | select(.head.sha == "'"$head_sha"'") | .number')
         echo "pr_number is $pr_number"
         pr_uid=${{ github.event.workflow_run.head_repository.owner.login }}
         echo "pr_uid is $pr_uid"
