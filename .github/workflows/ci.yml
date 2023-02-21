@@ -10,18 +10,15 @@ jobs:
   deploy:
     name: Land DA CI/CD Workflow 
     runs-on: ubuntu-latest
-    environment: production
+    environment: production  
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - run: label test
-        if [ ${{ github.event.label.name }} == 'bug' ]; then
-          echo "bugggggggg"
-        fi
-        if [ ${{ github.event.label.name }} == 'test' ]; then
-          echo "testtttttt"
-        else
-          echo "no labellllll"
-        fi
-      shell: bash        
+    - name: label tests bug
+      if: ${{ github.event.label.name == 'bug' }}
+      run: |
+        echo "buggggggggg"
+        
+    - name: label tests test
+      if: ${{ github.event.label.name == 'test' }}
+      run: |
+        echo "testttttttt"        
