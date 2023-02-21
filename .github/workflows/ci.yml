@@ -1,0 +1,24 @@
+name: Continuous Delivery of Land DA Container
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  deploy:
+    name: Land DA CI/CD Workflow 
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      if: ${{ github.event.label.name == 'doc' }}
+      run: |
+        echo "label 11111111"
+      if: ${{ github.event.label.name == 'test' }}
+      run: |
+        echo "label 22222222"        
+        
