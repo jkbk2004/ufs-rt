@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - run: |
+    - run: label test
         if [ ${{ github.event.label.name }} == 'bug' ]; then
           echo "bugggggggg"
         fi
