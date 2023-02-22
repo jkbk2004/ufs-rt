@@ -1,0 +1,24 @@
+name: Continuous Delivery of Land DA Container
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Land DA CI/CD Workflow 
+    runs-on: ubuntu-latest
+    environment: production  
+
+    steps:
+    - name: label tests bug
+      if: ${{ github.event.label.name == 'bug' }}
+      run: |
+        echo "bugiiiiiiii"
+        
+    - name: label tests test
+      if: ${{ github.event.label.name == 'test' }}
+      run: |
+        echo "testsssssss"        
