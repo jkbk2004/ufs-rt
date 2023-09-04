@@ -1,0 +1,206 @@
+Apps, RT cases, Cores, Wallclock, Cores*Wallclock, Physics, NPX(Atm), NPY(Atm), Ntiles, nx_global(Ocn), ny_global(Ocn)
+S2SWA-32BIT , cpld_control_p8_mixedmode_intel , 200 , 310 , 62116 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA-32BIT , cpld_control_p8_mixedmode_intel , 200 , 310 , 62116 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA-32BIT , cpld_control_gfsv17_intel , 200 , 218 , 43665 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA-32BIT , cpld_control_gfsv17_intel , 200 , 218 , 43665 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA , cpld_control_p8_intel , 200 , 338 , 67786 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA , cpld_control_p8_intel , 200 , 338 , 67786 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA , cpld_control_qr_p8_intel , 200 , 340 , 68000 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA , cpld_control_qr_p8_intel , 200 , 340 , 68000 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA , cpld_mpi_p8_intel , 280 , 284 , 79793 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA , cpld_mpi_p8_intel , 280 , 284 , 79793 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA , cpld_control_ciceC_p8_intel , 200 , 343 , 68621 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA , cpld_control_ciceC_p8_intel , 200 , 343 , 68621 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA , cpld_control_c192_p8_intel , 800 , 588 , 470400 , FV3_GFS_v17_coupled_p8 , 193 , 193 , 6 , 720 , 576
+S2SWA , cpld_control_c192_p8_intel , 800 , 588 , 470400 , FV3_GFS_v17_coupled_p8 , 193 , 193 , 6
+S2SWA , cpld_bmark_p8_intel , 1320 , 662 , 874650 , FV3_GFS_v17_coupled_p8 , 385 , 385 , 6 , 1440 , 1080
+S2SWA , cpld_bmark_p8_intel , 1320 , 662 , 874650 , FV3_GFS_v17_coupled_p8 , 385 , 385 , 6
+S2SWA , cpld_control_p8_faster_intel , 200 , 319 , 63859 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA , cpld_control_p8_faster_intel , 200 , 319 , 63859 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA , cpld_control_p8_gnu , 200 , 1725 , 345178 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA , cpld_control_p8_gnu , 200 , 1725 , 345178 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SW , cpld_control_noaero_p8_intel , 200 , 264 , 52852 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SW , cpld_control_noaero_p8_intel , 200 , 264 , 52852 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SW , cpld_control_nowave_noaero_p8_intel , 200 , 258 , 51766 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SW , cpld_control_nowave_noaero_p8_intel , 200 , 258 , 51766 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA-DEBUG , cpld_debug_p8_intel , 200 , 520 , 104089 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA-DEBUG , cpld_debug_p8_intel , 200 , 520 , 104089 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SWA-DEBUG , cpld_debug_p8_gnu , 200 , 967 , 193520 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SWA-DEBUG , cpld_debug_p8_gnu , 200 , 967 , 193520 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2SW-DEBUG , cpld_debug_noaero_p8_intel , 200 , 344 , 68874 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2SW-DEBUG , cpld_debug_noaero_p8_intel , 200 , 344 , 68874 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+S2S , cpld_control_noaero_p8_agrid_intel , 200 , 264 , 52805 , FV3_GFS_v17_coupled_p8_sfcocn , 97 , 97 , 6 , 360 , 320
+S2S , cpld_control_noaero_p8_agrid_intel , 200 , 264 , 52805 , FV3_GFS_v17_coupled_p8_sfcocn , 97 , 97 , 6
+S2S , cpld_control_c48_intel , 20 , 319 , 6385 , FV3_GFS_v17_coupled_p8 , 49 , 49 , 6 , 72 , 35
+S2S , cpld_control_c48_intel , 20 , 319 , 6385 , FV3_GFS_v17_coupled_p8 , 49 , 49 , 6
+S2S , cpld_control_nowave_noaero_p8_gnu , 200 , 1226 , 245271 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6 , 360 , 320
+S2S , cpld_control_nowave_noaero_p8_gnu , 200 , 1226 , 245271 , FV3_GFS_v17_coupled_p8 , 97 , 97 , 6
+ATM-32BIT , control_flake_intel , 160 , 185 , 29752 , FV3_GFS_v16_flake , 97 , 97 , 6
+ATM-32BIT , control_CubedSphereGrid_intel , 160 , 137 , 22025 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_CubedSphereGrid_parallel_intel , 160 , 138 , 22229 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_latlon_intel , 160 , 135 , 21697 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_wrtGauss_netcdf_parallel_intel , 160 , 135 , 21604 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_c48_intel , 8 , 522 , 4182 , FV3_GFS_v16 , 49 , 49 , 6
+ATM-32BIT , control_c192_intel , 240 , 522 , 125480 , FV3_GFS_v16 , 193 , 193 , 6
+ATM-32BIT , control_c384_intel , 680 , 519 , 353343 , FV3_GFS_v16 , 385 , 385 , 6
+ATM-32BIT , control_c384gdas_intel , 680 , 461 , 313798 , FV3_GFS_v16 , 385 , 385 , 6
+ATM-32BIT , control_stochy_intel , 160 , 88 , 14134 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_lndp_intel , 160 , 81 , 13072 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_iovr4_intel , 160 , 135 , 21672 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_iovr5_intel , 160 , 134 , 21529 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT , control_p8_intel , 160 , 227 , 36420 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM-32BIT , control_qr_p8_intel , 160 , 166 , 26578 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM-32BIT , control_p8_lndp_intel , 160 , 309 , 49541 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM-32BIT , control_p8_rrtmgp_intel , 160 , 223 , 35788 , FV3_GFS_v17_p8_rrtmgp , 97 , 97 , 6
+ATM-32BIT , control_p8_mynn_intel , 160 , 170 , 27216 , FV3_GFS_v17_p8_mynn , 97 , 97 , 6
+ATM-32BIT , merra2_thompson_intel , 160 , 190 , 30517 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM-32BIT , regional_control_intel , 120 , 294 , 35365 , FV3_GFS_v15_thompson_mynn_lam3km , 321 , 193 , 1
+ATM-32BIT , regional_control_qr_intel , 120 , 292 , 35043 , FV3_GFS_v15_thompson_mynn_lam3km , 321 , 193 , 1
+ATM-32BIT , regional_noquilt_intel , 120 , 289 , 34684 , FV3_GFS_v15_thompson_mynn_lam3km , 321 , 193 , 1
+ATM-32BIT , regional_netcdf_parallel_intel , 120 , 287 , 34527 , FV3_GFS_v15_thompson_mynn_lam3km , 321 , 193 , 1
+ATM-32BIT , regional_wofs_intel , 120 , 370 , 44511 , FV3_WoFS_v0 , 321 , 193 , 1
+ATM-32BIT , rap_control_intel , 160 , 446 , 71451 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT , regional_spp_sppt_shum_skeb_intel , 400 , 229 , 91679 , FV3_HRRR , 841 , 601 , 1
+ATM-32BIT , rap_sfcdiff_intel , 160 , 446 , 71403 , FV3_RAP_sfcdiff , 97 , 97 , 6
+ATM-32BIT , hrrr_control_intel , 160 , 429 , 68773 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , hrrr_control_qr_intel , 160 , 428 , 68565 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , rrfs_v1beta_intel , 160 , 439 , 70360 , FV3_RRFS_v1beta , 97 , 97 , 6
+ATM-32BIT , rrfs_v1nssl_intel , 160 , 519 , 83091 , FV3_RRFS_v1nssl , 97 , 97 , 6
+ATM-32BIT , rrfs_v1nssl_nohailnoccn_intel , 160 , 507 , 81231 , FV3_RRFS_v1nssl , 97 , 97 , 6
+ATM-32BIT , hrrr_gf_intel , 160 , 507 , 81231 , FV3_HRRR_gf , 97 , 97 , 6
+ATM-32BIT , hrrr_c3_intel , 160 , 507 , 81231 , FV3_HRRR_c3 , 97 , 97 , 6
+ATM-32BIT , control_wam_intel , 160 , 111 , 17837 , FV3_GFS_v16_fv3wam , 97 , 97 , 6
+ATM-32BIT , control_p8_faster_intel , 160 , 152 , 24478 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM-32BIT , regional_control_faster_intel , 120 , 264 , 31740 , FV3_GFS_v15_thompson_mynn_lam3km , 321 , 193 , 1
+ATM-32BIT , regional_spp_sppt_shum_skeb_dyn32_phy32_intel , 400 , 217 , 86873 , FV3_HRRR , 841 , 601 , 1
+ATM-32BIT , rap_control_dyn32_phy32_intel , 160 , 368 , 58970 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT , hrrr_control_dyn32_phy32_intel , 160 , 191 , 30636 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , hrrr_control_qr_dyn32_phy32_intel , 160 , 189 , 30295 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , conus13km_control_intel , 160 , 189 , 30295 , FV3_HRRR , 397 , 233 , 1
+ATM-32BIT , rap_control_gnu , 160 , 1512 , 242024 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT , rap_sfcdiff_gnu , 160 , 1467 , 234754 , FV3_RAP_sfcdiff , 97 , 97 , 6
+ATM-32BIT , hrrr_control_gnu , 160 , 1422 , 227664 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , hrrr_control_qr_gnu , 160 , 1490 , 238473 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , rrfs_v1beta_gnu , 160 , 1470 , 235265 , FV3_RRFS_v1beta , 97 , 97 , 6
+ATM-32BIT , hrrr_gf_gnu , 160 , 1470 , 235265 , FV3_HRRR_gf , 97 , 97 , 6
+ATM-32BIT , rap_control_dyn32_phy32_gnu , 160 , 1506 , 241073 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT , hrrr_control_dyn32_phy32_gnu , 160 , 739 , 118267 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , hrrr_control_qr_dyn32_phy32_gnu , 160 , 755 , 120838 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT , conus13km_control_gnu , 160 , 755 , 120838 , FV3_HRRR , 397 , 233 , 1
+ATM , control_csawmg_intel , 160 , 333 , 53416 , FV3_GFS_v16_csawmg , 97 , 97 , 6
+ATM , control_csawmgt_intel , 160 , 330 , 52805 , FV3_GFS_v16_csawmg , 97 , 97 , 6
+ATM , control_ras_intel , 160 , 182 , 29256 , FV3_GFS_v16_ras , 97 , 97 , 6
+ATM , rap_control_dyn64_phy32_intel , 160 , 238 , 38142 , FV3_RAP , 97 , 97 , 6
+ATM , control_c48_gnu , 8 , 675 , 5401 , FV3_GFS_v16 , 49 , 49 , 6
+ATM , control_stochy_gnu , 160 , 675 , 108032 , FV3_GFS_v16 , 97 , 97 , 6
+ATM , control_ras_gnu , 160 , 808 , 129308 , FV3_GFS_v16_ras , 97 , 97 , 6
+ATM , control_p8_gnu , 160 , 1725 , 276142 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM , control_flake_gnu , 160 , 1556 , 248974 , FV3_GFS_v16_flake , 97 , 97 , 6
+ATM , rap_control_dyn64_phy32_gnu , 160 , 1070 , 171241 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_CubedSphereGrid_debug_intel , 160 , 148 , 23714 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_wrtGauss_netcdf_parallel_debug_intel , 160 , 145 , 23330 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_stochy_debug_intel , 160 , 162 , 26044 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_lndp_debug_intel , 160 , 146 , 23385 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_csawmg_debug_intel , 160 , 227 , 36381 , FV3_GFS_v16_csawmg , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_csawmgt_debug_intel , 160 , 221 , 35492 , FV3_GFS_v16_csawmg , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_ras_debug_intel , 160 , 148 , 23721 , FV3_GFS_v16_ras , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_diag_debug_intel , 160 , 152 , 24400 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_debug_p8_intel , 160 , 167 , 26814 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM-32BIT-DEBUG , regional_debug_intel , 120 , 967 , 116103 , FV3_GFS_v15_thompson_mynn_lam3km , 321 , 193 , 1
+ATM-32BIT-DEBUG , rap_control_debug_intel , 160 , 270 , 43285 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , hrrr_control_debug_intel , 160 , 267 , 42725 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_diag_debug_intel , 160 , 282 , 45227 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_cires_ugwp_debug_intel , 160 , 275 , 44144 , FV3_RAP_cires_ugwp , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_lndp_debug_intel , 160 , 274 , 43977 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_progcld_thompson_debug_intel , 160 , 272 , 43589 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_noah_debug_intel , 160 , 268 , 42976 , FV3_RAP_noah , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_sfcdiff_debug_intel , 160 , 272 , 43605 , FV3_RAP_sfcdiff , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_noah_sfcdiff_cires_ugwp_debug_intel , 160 , 454 , 72774 , FV3_RAP_noah_sfcdiff_cires_ugwp , 97 , 97 , 6
+ATM-32BIT-DEBUG , rrfs_v1beta_debug_intel , 160 , 267 , 42878 , FV3_RRFS_v1beta , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_clm_lake_debug_intel , 160 , 350 , 56141 , FV3_RAP_clm_lake , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_flake_debug_intel , 160 , 273 , 43710 , FV3_RAP_flake , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_wam_debug_intel , 160 , 271 , 43415 , FV3_GFS_v16_fv3wam , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_control_debug_dyn32_phy32_intel , 160 , 265 , 42440 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , hrrr_control_debug_dyn32_phy32_intel , 160 , 261 , 41820 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT-DEBUG , conus13km_debug_intel , 160 , 261 , 41820 , FV3_HRRR , 397 , 233 , 1
+ATM-32BIT-DEBUG , conus13km_radar_tten_debug_intel , 160 , 261 , 41820 , FV3_HRRR , 397 , 233 , 1
+ATM-32BIT-DEBUG , control_diag_debug_gnu , 160 , 122 , 19553 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT-DEBUG , regional_debug_gnu , 120 , 767 , 92073 , FV3_GFS_v15_thompson_mynn_lam3km , 321 , 193 , 1
+ATM-32BIT-DEBUG , rap_control_debug_gnu , 160 , 171 , 27416 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , hrrr_control_debug_gnu , 160 , 169 , 27079 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_diag_debug_gnu , 160 , 210 , 33673 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_noah_sfcdiff_cires_ugwp_debug_gnu , 160 , 271 , 43374 , FV3_RAP_noah_sfcdiff_cires_ugwp , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_progcld_thompson_debug_gnu , 160 , 173 , 27694 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , rrfs_v1beta_debug_gnu , 160 , 173 , 27801 , FV3_RRFS_v1beta , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_ras_debug_gnu , 160 , 100 , 16092 , FV3_GFS_v16_ras , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_stochy_debug_gnu , 160 , 119 , 19179 , FV3_GFS_v16 , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_debug_p8_gnu , 160 , 117 , 18808 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_flake_debug_gnu , 160 , 174 , 27915 , FV3_RAP_flake , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_clm_lake_debug_gnu , 160 , 195 , 31280 , FV3_RAP_clm_lake , 97 , 97 , 6
+ATM-32BIT-DEBUG , control_wam_debug_gnu , 160 , 180 , 28839 , FV3_GFS_v16_fv3wam , 97 , 97 , 6
+ATM-32BIT-DEBUG , rap_control_debug_dyn32_phy32_gnu , 160 , 169 , 27105 , FV3_RAP , 97 , 97 , 6
+ATM-32BIT-DEBUG , hrrr_control_debug_dyn32_phy32_gnu , 160 , 170 , 27332 , FV3_HRRR , 97 , 97 , 6
+ATM-32BIT-DEBUG , conus13km_debug_gnu , 160 , 170 , 27332 , FV3_HRRR , 397 , 233 , 1
+ATM-32BIT-DEBUG , conus13km_radar_tten_debug_gnu , 160 , 170 , 27332 , FV3_HRRR , 397 , 233 , 1
+ATM-DEBUG , rap_control_dyn64_phy32_debug_intel , 160 , 275 , 44034 , FV3_RAP , 97 , 97 , 6
+ATM-DEBUG , rap_control_dyn64_phy32_debug_gnu , 160 , 202 , 32445 , FV3_RAP , 97 , 97 , 6
+HAFSW-MOVING_NEST-32BIT , hafs_regional_atm_intel , 600 , 223 , 133816 , FV3_HAFS_v1_gfdlmp_tedmf , 721 , 601 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_atm_thompson_gfdlsf_intel , 600 , 329 , 197471 , FV3_HAFS_v1_thompson_tedmf_gfdlsf , 721 , 601 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_atm_ocn_intel , 360 , 372 , 134072 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 721 , 601 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_atm_wav_intel , 360 , 745 , 268504 , FV3_HAFS_v1_gfdlmp_tedmf , 721 , 601 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_atm_ocn_wav_intel , 440 , 837 , 368503 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 721 , 601 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_1nest_atm_intel , 360 , 292 , 105393 , FV3_HAFS_v1_gfdlmp_tedmf , 241 , 241 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_1nest_atm_qr_intel , 360 , 305 , 109824 , FV3_HAFS_v1_gfdlmp_tedmf , 241 , 241 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_telescopic_2nests_atm_intel , 480 , 341 , 164107 , FV3_HAFS_v1_gfdlmp_tedmf , 241 , 241 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_global_1nest_atm_intel , 480 , 138 , 66395 , FV3_HAFS_v1_gfdlmp_tedmf , 97 , 97 , 6
+HAFSW-MOVING_NEST-32BIT , hafs_global_1nest_atm_qr_intel , 480 , 142 , 68311 , FV3_HAFS_v1_gfdlmp_tedmf , 97 , 97 , 6
+HAFSW-MOVING_NEST-32BIT , hafs_global_multiple_4nests_atm_intel , 840 , 388 , 326260 , FV3_HAFS_v1_gfdlmp_tedmf , 97 , 97 , 6
+HAFSW-MOVING_NEST-32BIT , hafs_global_multiple_4nests_atm_qr_intel , 840 , 411 , 345485 , FV3_HAFS_v1_gfdlmp_tedmf , 97 , 97 , 6
+HAFSW-MOVING_NEST-32BIT , hafs_regional_storm_following_1nest_atm_intel , 360 , 179 , 64675 , FV3_HAFS_v1_gfdlmp_tedmf , 241 , 241 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_storm_following_1nest_atm_qr_intel , 360 , 190 , 68406 , FV3_HAFS_v1_gfdlmp_tedmf , 241 , 241 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_regional_storm_following_1nest_atm_ocn_intel , 600 , 218 , 131204 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 241 , 241 , 1
+HAFSW-MOVING_NEST-32BIT , hafs_global_storm_following_1nest_atm_intel , 480 , 55 , 26484 , FV3_HAFS_v1_gfdlmp_tedmf , 97 , 97 , 6
+HAFSW-MOVING_NEST-32BIT , hafs_regional_storm_following_1nest_atm_ocn_wav_intel , 600 , 477 , 286785 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 241 , 241 , 1
+HAFSW-MOVING_NEST-32BIT-DEBUG , hafs_regional_storm_following_1nest_atm_ocn_debug_intel , 600 , 718 , 431380 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 241 , 241 , 1
+HAFS-ALL-32BIT , hafs_regional_docn_intel , 360 , 344 , 124087 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 721 , 601 , 1
+HAFS-ALL-32BIT , hafs_regional_docn_oisst_intel , 360 , 343 , 123564 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 721 , 601 , 1
+HAFS-ALL-32BIT , hafs_regional_datm_cdeps_intel , 120 , 948 , 113817 , , , , , , , ,
+NG-GODAS , datm_cdeps_control_cfsr_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_control_cfsr_intel , 40 , 407 , 16302 , , , , , , , ,
+NG-GODAS , datm_cdeps_control_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_control_gefs_intel , 40 , 407 , 16302 , , , , , , , ,
+NG-GODAS , datm_cdeps_iau_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_iau_gefs_intel , 40 , 407 , 16302 , , , , , , , ,
+NG-GODAS , datm_cdeps_stochy_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_stochy_gefs_intel , 40 , 407 , 16302 , , , , , , , ,
+NG-GODAS , datm_cdeps_ciceC_cfsr_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_ciceC_cfsr_intel , 40 , 407 , 16302 , , , , , , , ,
+NG-GODAS , datm_cdeps_bulk_cfsr_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_bulk_cfsr_intel , 40 , 407 , 16302 , , , , , , , ,
+NG-GODAS , datm_cdeps_bulk_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_bulk_gefs_intel , 40 , 407 , 16302 , , , , , , , ,
+NG-GODAS , datm_cdeps_mx025_cfsr_intel , 240 , 407 , 97813 , , , , , , , , , 1440 , 1080
+NG-GODAS , datm_cdeps_mx025_cfsr_intel , 240 , 407 , 97813 , , , , , , , ,
+NG-GODAS , datm_cdeps_mx025_gefs_intel , 240 , 429 , 103089 , , , , , , , , , 1440 , 1080
+NG-GODAS , datm_cdeps_mx025_gefs_intel , 240 , 429 , 103089 , , , , , , , ,
+NG-GODAS , datm_cdeps_multiple_files_cfsr_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_multiple_files_cfsr_intel , 40 , 6 , 249 , , , , , , , ,
+NG-GODAS , datm_cdeps_3072x1536_cfsr_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_3072x1536_cfsr_intel , 40 , 6 , 249 , , , , , , , ,
+NG-GODAS , datm_cdeps_gfs_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_gfs_intel , 40 , 6 , 249 , , , , , , , ,
+NG-GODAS , datm_cdeps_control_cfsr_faster_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_control_cfsr_faster_intel , 40 , 6 , 249 , , , , , , , ,
+NG-GODAS , datm_cdeps_control_cfsr_gnu , 40 , 6 , 249 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_control_cfsr_gnu , 40 , 6 , 249 , , , , , , , ,
+NG-GODAS-DEBUG , datm_cdeps_debug_cfsr_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
+NG-GODAS-DEBUG , datm_cdeps_debug_cfsr_intel , 40 , 6 , 249 , , , , , , , ,
+ATML , control_p8_atmlnd_sbs_intel , 320 , 201 , 64474 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATMW-32BIT , atmwav_control_noaero_p8_intel , 200 , 93 , 18647 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATMWM-32BIT , control_atmwav_intel , 200 , 86 , 17257 , FV3_GFS_v16 , 97 , 97 , 6
+ATMAERO-32BIT , atmaero_control_p8_intel , 200 , 227 , 45526 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATMAERO-32BIT , atmaero_control_p8_rad_intel , 160 , 278 , 44591 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATMAERO-32BIT , atmaero_control_p8_rad_micro_intel , 160 , 286 , 45781 , FV3_GFS_v17_p8 , 97 , 97 , 6
+ATMAQ-32BIT , regional_atmaq_intel , 300 , 651 , 195441 , FV3_GFS_v15p2 , 397 , 233 , 1
+ATMAQ-32BIT , regional_atmaq_faster_intel , 300 , 566 , 170050 , FV3_GFS_v15p2 , 397 , 233 , 1
+ATMAQ-32BIT-DEBUG , regional_atmaq_debug_intel , 300 , 1202 , 360686 , FV3_GFS_v15p2 , 397 , 233 , 1
