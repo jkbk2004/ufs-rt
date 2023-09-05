@@ -147,21 +147,21 @@ HAFSW-MOVING_NEST-32BIT-DEBUG , hafs_regional_storm_following_1nest_atm_ocn_debu
 HAFS-ALL-32BIT , hafs_regional_docn_intel , 360 , 344 , 124087 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 721 , 601 , 1
 HAFS-ALL-32BIT , hafs_regional_docn_oisst_intel , 360 , 343 , 123564 , FV3_HAFS_v1_gfdlmp_tedmf_nonsst , 721 , 601 , 1
 HAFS-ALL-32BIT , hafs_regional_datm_cdeps_intel , 120 , 948 , 113817 , , , , , , , ,
-NG-GODAS , datm_cdeps_control_cfsr_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_control_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_iau_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_stochy_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_ciceC_cfsr_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_bulk_cfsr_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_bulk_gefs_intel , 40 , 407 , 16302 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_mx025_cfsr_intel , 240 , 407 , 97813 , , , , , , , , , 1440 , 1080
-NG-GODAS , datm_cdeps_mx025_gefs_intel , 240 , 429 , 103089 , , , , , , , , , 1440 , 1080
-NG-GODAS , datm_cdeps_multiple_files_cfsr_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_3072x1536_cfsr_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_gfs_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_control_cfsr_faster_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
-NG-GODAS , datm_cdeps_control_cfsr_gnu , 40 , 6 , 249 , , , , , , , , , 360 , 320
-NG-GODAS-DEBUG , datm_cdeps_debug_cfsr_intel , 40 , 6 , 249 , , , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_control_cfsr_intel , 40 , 407 , 16302 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_control_gefs_intel , 40 , 407 , 16302 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_iau_gefs_intel , 40 , 407 , 16302 , , , , , , , 360 , 320
+NG-GODAS , datm_cdeps_stochy_gefs_intel , 40 , 407 , 16302 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_ciceC_cfsr_intel , 40 , 407 , 16302 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_bulk_cfsr_intel , 40 , 407 , 16302 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_bulk_gefs_intel , 40 , 407 , 16302 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_mx025_cfsr_intel , 240 , 407 , 97813 , , , , , 1440 , 1080
+NG-GODAS , datm_cdeps_mx025_gefs_intel , 240 , 429 , 103089 , , , , , 1440 , 1080
+NG-GODAS , datm_cdeps_multiple_files_cfsr_intel , 40 , 6 , 249 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_3072x1536_cfsr_intel , 40 , 6 , 249 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_gfs_intel , 40 , 6 , 249 , , , , ,  360 , 320
+NG-GODAS , datm_cdeps_control_cfsr_faster_intel , 40 , 6 , 249 , , , , , 360 , 320
+NG-GODAS , datm_cdeps_control_cfsr_gnu , 40 , 6 , 249 , , , , , 360 , 320
+NG-GODAS-DEBUG , datm_cdeps_debug_cfsr_intel , 40 , 6 , 249 , , , , , 360 , 320
 ATML , control_p8_atmlnd_sbs_intel , 320 , 201 , 64474 , FV3_GFS_v17_p8 , 97 , 97 , 6
 ATMW-32BIT , atmwav_control_noaero_p8_intel , 200 , 93 , 18647 , FV3_GFS_v17_p8 , 97 , 97 , 6
 ATMWM-32BIT , control_atmwav_intel , 200 , 86 , 17257 , FV3_GFS_v16 , 97 , 97 , 6
