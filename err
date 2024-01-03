@@ -1,479 +1,939 @@
 ++ date +%s
-+ echo -n ' 1693193371,'
++ echo -n ' 1704298169,'
 + set +x
 
 Currently Loaded Modules:
-  1) cmake/3.22.0         10) jasper/2.0.25  19) g2/3.4.5
-  2) python/3.7.9         11) zlib/1.2.11    20) g2tmpl/1.10.2
-  3) ncarenv/1.3          12) hdf5/1.14.0    21) ip/3.3.3
-  4) ncarcompilers/0.5.0  13) netcdf/4.9.2   22) sp/2.3.3
-  5) hpc/1.2.0            14) pio/2.5.10     23) w3emc/2.9.2
-  6) intel/2022.1         15) esmf/8.4.2     24) gftl-shared/v1.5.0
-  7) hpc-intel/2022.1     16) fms/2023.01    25) mapl/2.35.2-esmf-8.4.2
-  8) mpt/2.25             17) bacio/2.4.1    26) scotch/7.0.3
-  9) hpc-mpt/2.25         18) crtm/2.4.0     27) modules.fv3
+  1) stack-gcc/12.2.0        24) git-lfs/3.1.2
+  2) gcc/12.2.0              25) crtm/2.4.0.1
+  3) mvapich2/2.3.7          26) g2/3.4.5
+  4) stack-mvapich2/2.3.7    27) g2tmpl/1.10.2
+  5) nghttp2/1.57.0          28) ip/4.3.0
+  6) curl/8.4.0              29) sp/2.5.0
+  7) cmake/3.23.1            30) w3emc/2.10.0
+  8) libjpeg/2.1.0           31) gftl/1.10.0
+  9) jasper/2.0.32           32) gftl-shared/1.6.1
+ 10) zlib/1.2.13             33) fargparse/1.5.0
+ 11) libpng/1.6.37           34) pigz/2.7
+ 12) snappy/1.1.10           35) tar/1.34
+ 13) zstd/1.5.2              36) gettext/0.21.1
+ 14) c-blosc/1.21.5          37) libxcrypt/4.4.35
+ 15) hdf5/1.14.0             38) sqlite/3.43.2
+ 16) netcdf-c/4.9.2          39) util-linux-uuid/2.38.1
+ 17) netcdf-fortran/4.6.1    40) python/3.10.13
+ 18) parallel-netcdf/1.12.2  41) mapl/2.40.3-esmf-8.5.0
+ 19) parallelio/2.5.10       42) scotch/7.0.4
+ 20) esmf/8.5.0              43) ufs_common
+ 21) fms/2023.02.01          44) nccmp/1.9.0.1
+ 22) bacio/2.4.1             45) modules.fv3
+ 23) crtm-fix/2.4.0.1_emc
 
  
 
++ ulimit -s unlimited
 ++ date
-+ echo 'Model started:  ' Sun Aug 27 21:29:32 MDT 2023
-+ export MPI_TYPE_DEPTH=20
-+ MPI_TYPE_DEPTH=20
++ echo 'Model started:  ' Wed Jan 3 16:09:33 GMT 2024
 + export OMP_STACKSIZE=512M
 + OMP_STACKSIZE=512M
++ export KMP_AFFINITY=scatter
++ KMP_AFFINITY=scatter
 + export OMP_NUM_THREADS=1
 + OMP_NUM_THREADS=1
-+ export ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
-+ ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
 + export ESMF_RUNTIME_PROFILE=ON
 + ESMF_RUNTIME_PROFILE=ON
 + export ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
 + ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
++ [[ gnu == gnu ]]
++ export MV2_SHMEM_COLL_NUM_COMM=128
++ MV2_SHMEM_COLL_NUM_COMM=128
 + sync
 + sleep 1
-+ mpiexec_mpt -p %g: -np 162 omplace ./fv3.exe
-126:
-126:WARNING from PE   126: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-126:
-129:
-129:WARNING from PE   129: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-129:
-54:
-54:WARNING from PE    54: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-54:
-55:
-55:WARNING from PE    55: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-55:
-127:
-127:WARNING from PE   127: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-127:
-90:
-90:WARNING from PE    90: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-90:
-57:
-57:WARNING from PE    57: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-57:
-19:
-19:WARNING from PE    19: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-19:
-128:
-128:WARNING from PE   128: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-128:
-14:
-14:WARNING from PE    14: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-14:
-61:
-61:WARNING from PE    61: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-61:
-112:
-112:WARNING from PE   112: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-112:
-20:
-20:WARNING from PE    20: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-20:
-130:
-130:WARNING from PE   130: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-130:
-73:
-73:WARNING from PE    73: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-73:
-15:
-15:WARNING from PE    15: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-15:
-38:
-38:WARNING from PE    38: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-38:
-62:
-62:WARNING from PE    62: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-62:
-92:
-92:WARNING from PE    92: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-92:
-114:
-114:WARNING from PE   114: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-114:
-21:
-21:WARNING from PE    21: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-21:
-76:
-76:WARNING from PE    76: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-76:
-16:
-16:WARNING from PE    16: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-16:
-40:
-40:WARNING from PE    40: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-40:
-64:
-64:WARNING from PE    64: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-64:
-94:
-94:WARNING from PE    94: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-94:
-117:
-117:WARNING from PE   117: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-117:
-22:
-22:WARNING from PE    22: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-22:
-79:
-79:WARNING from PE    79: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-79:
-17:
-17:WARNING from PE    17: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-17:
-41:
-41:WARNING from PE    41: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-41:
-65:
-65:WARNING from PE    65: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-65:
-97:
-97:WARNING from PE    97: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-97:
-121:
-121:WARNING from PE   121: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-121:
-26:
-26:WARNING from PE    26: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-26:
-80:
-80:WARNING from PE    80: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-80:
-13:
-13:WARNING from PE    13: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-13:
-43:
-43:WARNING from PE    43: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-43:
-66:
-66:WARNING from PE    66: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-66:
-98:
-98:WARNING from PE    98: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-98:
-122:
-122:WARNING from PE   122: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-122:
-27:
-27:WARNING from PE    27: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-27:
-81:
-81:WARNING from PE    81: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-81:
-44:
-44:WARNING from PE    44: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-44:
-67:
-67:WARNING from PE    67: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-67:
-99:
-99:WARNING from PE    99: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-99:
-123:
-123:WARNING from PE   123: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-123:
-28:
-28:WARNING from PE    28: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-28:
-82:
-82:WARNING from PE    82: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-82:
-45:
-45:WARNING from PE    45: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-45:
-68:
-68:WARNING from PE    68: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-68:
-100:
-100:WARNING from PE   100: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-100:
-124:
-124:WARNING from PE   124: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-124:
-31:
-31:WARNING from PE    31: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-31:
-85:
-85:WARNING from PE    85: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-85:
-46:
-46:WARNING from PE    46: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-46:
-69:
-69:WARNING from PE    69: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-69:
-101:
-101:WARNING from PE   101: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-101:
-125:
-125:WARNING from PE   125: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-125:
-32:
-32:WARNING from PE    32: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-32:
-86:
-86:WARNING from PE    86: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-86:
-49:
-49:WARNING from PE    49: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-49:
-70:
-70:WARNING from PE    70: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-70:
-103:
-103:WARNING from PE   103: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-103:
-109:
-109:WARNING from PE   109: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-109:
-33:
-33:WARNING from PE    33: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-33:
-87:
-87:WARNING from PE    87: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-87:
-53:
-53:WARNING from PE    53: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-53:
-56:
-56:WARNING from PE    56: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-56:
-104:
-104:WARNING from PE   104: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-104:
-110:
-110:WARNING from PE   110: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-110:
-34:
-34:WARNING from PE    34: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-34:
-88:
-88:WARNING from PE    88: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-88:
-37:
-37:WARNING from PE    37: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-37:
-58:
-58:WARNING from PE    58: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-58:
-105:
-105:WARNING from PE   105: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-105:
-111:
-111:WARNING from PE   111: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-111:
-18:
-18:WARNING from PE    18: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-18:
-89:
-89:WARNING from PE    89: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-89:
-39:
-39:WARNING from PE    39: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-39:
-63:
-63:WARNING from PE    63: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-63:
-106:
-106:WARNING from PE   106: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-106:
-113:
-113:WARNING from PE   113: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-113:
-25:
-25:WARNING from PE    25: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-25:
-74:
-74:WARNING from PE    74: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-74:
-42:
-42:WARNING from PE    42: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-42:
-91:
-91:WARNING from PE    91: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-91:
-115:
-115:WARNING from PE   115: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-115:
-29:
-29:WARNING from PE    29: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-29:
-75:
-75:WARNING from PE    75: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-75:
-50:
-50:WARNING from PE    50: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-50:
-93:
-93:WARNING from PE    93: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-93:
-116:
-116:WARNING from PE   116: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-116:
-30:
-30:WARNING from PE    30: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-30:
-77:
-77:WARNING from PE    77: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-77:
-51:
-51:WARNING from PE    51: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-51:
-102:
-102:WARNING from PE   102: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-102:
-118:
-118:WARNING from PE   118: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-118:
-78:
-78:WARNING from PE    78: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-78:
-52:
-52:WARNING from PE    52: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-52:
-36:
-36:WARNING from PE    36: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-36:
-48:
-48:WARNING from PE    48: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-48:
-107:
-107:WARNING from PE   107: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-107:
-24:
-24:WARNING from PE    24: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-24:
-96:
-96:WARNING from PE    96: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-96:
-95:
-95:WARNING from PE    95: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-95:
-71:
-71:WARNING from PE    71: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-71:
-47:
-47:WARNING from PE    47: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-47:
-59:
-59:WARNING from PE    59: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-59:
-60:
-60:WARNING from PE    60: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-60:
-35:
-35:WARNING from PE    35: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-35:
-72:
-72:WARNING from PE    72: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-72:
-83:
-83:WARNING from PE    83: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-83:
-108:
-108:WARNING from PE   108: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-108:
-119:
-119:WARNING from PE   119: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-119:
-84:
-84:WARNING from PE    84: atmos_modeldefine_blocks_packed: domain (  33  19) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   19
-84:
-23:
-23:WARNING from PE    23: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-23:
-131:
-131:WARNING from PE   131: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-131:
-12:
-12:WARNING from PE    12: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-12:
-120:
-120:WARNING from PE   120: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-120:
-1:
-1:WARNING from PE     1: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-1:
-2:
-2:WARNING from PE     2: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-2:
-3:
-3:WARNING from PE     3: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-3:
-5:
-5:WARNING from PE     5: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-5:
-4:
-4:WARNING from PE     4: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-4:
-6:
-6:WARNING from PE     6: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-6:
-10:
-10:WARNING from PE    10: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-10:
-9:
-9:WARNING from PE     9: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-9:
-7:
-7:WARNING from PE     7: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-7:
-8:
-8:WARNING from PE     8: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-8:
-133:
-133:WARNING from PE   133: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-133:
-142:
-142:WARNING from PE   142: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-142:
-141:
-141:WARNING from PE   141: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-141:
-134:
-134:WARNING from PE   134: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-134:
-136:
-136:WARNING from PE   136: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-136:
-135:
-135:WARNING from PE   135: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-135:
-140:
-140:WARNING from PE   140: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-140:
-138:
-138:WARNING from PE   138: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-138:
-137:
-137:WARNING from PE   137: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-137:
-139:
-139:WARNING from PE   139: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-139:
-0:
-0:WARNING from PE     0: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-0:
-11:
-11:WARNING from PE    11: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-11:
-132:
-132:WARNING from PE   132: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-132:
-143:
-143:WARNING from PE   143: atmos_modeldefine_blocks_packed: domain (  33  20) is not an even divisor with definition (  32) - blocks will not be uniform with a remainder of   20
-143:
-144: file: module_write_restart_netcdf.F90 line:          452 NetCDF: HDF error
-145: file: module_write_restart_netcdf.F90 line:          452 NetCDF: HDF error
-146: file: module_write_restart_netcdf.F90 line:          452 NetCDF: HDF error
-147: file: module_write_restart_netcdf.F90 line:          452 NetCDF: HDF error
-148: file: module_write_restart_netcdf.F90 line:          452 NetCDF: HDF error
-149: file: module_write_restart_netcdf.F90 line:          452 NetCDF: HDF error
-146:MPT ERROR: Rank 146(g:146) is aborting with error code 1.
-146:	Process ID: 30498, Host: r11i7n13, Program: /glade/scratch/zshrader/FV3_RT/rt_6023/conus13km_control_qr_intel/fv3.exe
-146:	MPT Version: HPE MPT 2.25  08/14/21 03:05:20
-146:
-146:MPT: --------stack traceback-------
--1:MPT ERROR: MPI_COMM_WORLD rank 147 has terminated without calling MPI_Finalize()
--1:	aborting job
++ srun --label -n 240 ./fv3.exe
+  0: [hercules-03-51:mpi_rank_0][rdma_param_handle_heterogeneity] All nodes involved in the job were detected to be homogeneous in terms of processors and interconnects. Setting MV2_HOMOGENEOUS_CLUSTER=1 can improve job startup performance on such systems. The following link has more details on enhancing job startup performance. http://mvapich.cse.ohio-state.edu/performance/job-startup/.
+  0: [hercules-03-51:mpi_rank_0][rdma_param_handle_heterogeneity] To suppress this warning, please set MV2_SUPPRESS_JOB_STARTUP_PERFORMANCE_WARNING to 1
+  0: [hercules-03-51:mpi_rank_0][MPID_Init] [Performance Suggestion]: Application has requested for multi-thread capability. If allocating memory from different pthreads/OpenMP threads, please consider setting MV2_USE_ALIGNED_ALLOC=1 for improved performance.
+  0: Use MV2_USE_THREAD_WARNING=0 to suppress this error message.
+150: 
+150: WARNING from PE     0: MOM_obsolete_params: ETA_TOLERANCE_AUX is an obsolete run-time flag.
+150: 
+151: 
+151: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+151: 
+151: Backtrace for this error:
+152: 
+152: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+152: 
+152: Backtrace for this error:
+160: 
+160: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+160: 
+160: Backtrace for this error:
+153: 
+153: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+154: 
+154: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+154: 
+154: Backtrace for this error:
+155: 
+155: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+155: 
+155: Backtrace for this error:
+156: 
+156: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+156: 
+156: Backtrace for this error:
+157: 
+157: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+157: 
+157: Backtrace for this error:
+158: 
+158: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+158: 
+158: Backtrace for this error:
+159: 
+159: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+159: 
+159: Backtrace for this error:
+161: 
+161: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+161: 
+161: Backtrace for this error:
+162: 
+162: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+162: 
+162: Backtrace for this error:
+163: 
+163: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+163: 
+163: Backtrace for this error:
+164: 
+164: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+164: 
+164: Backtrace for this error:
+153: 
+153: Backtrace for this error:
+165: 
+165: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+165: 
+165: Backtrace for this error:
+166: 
+166: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+166: 
+166: Backtrace for this error:
+167: 
+167: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+167: 
+167: Backtrace for this error:
+168: 
+168: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+168: 
+168: Backtrace for this error:
+169: 
+169: Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+169: 
+169: Backtrace for this error:
+151: #0  0x14a59a117d8f in ???
+151: #1  0x14a59a18d64d in ???
+151: #2  0x3f29009 in ???
+151: #3  0x3d7778d in ???
+152: #0  0x150b08387d8f in ???
+152: #1  0x150b083fd64d in ???
+152: #2  0x3f29009 in ???
+152: #3  0x3d7778d in ???
+153: #0  0x153a64d4fd8f in ???
+153: #1  0x153a64dc564d in ???
+153: #2  0x3f29009 in ???
+153: #3  0x3d7778d in ???
+154: #0  0x15475d242d8f in ???
+154: #1  0x15475d2b864d in ???
+154: #2  0x3f29009 in ???
+154: #3  0x3d7778d in ???
+155: #0  0x14a2536d5d8f in ???
+156: #0  0x1494595f9d8f in ???
+156: #1  0x14945966f64d in ???
+156: #2  0x3f29009 in ???
+156: #3  0x3d7778d in ???
+157: #0  0x14cf85937d8f in ???
+157: #1  0x14cf859ad64d in ???
+157: #2  0x3f29009 in ???
+157: #3  0x3d7778d in ???
+158: #0  0x15382ec15d8f in ???
+158: #1  0x15382ec8b64d in ???
+158: #2  0x3f29009 in ???
+158: #3  0x3d7778d in ???
+159: #0  0x1478d068bd8f in ???
+159: #1  0x1478d070164d in ???
+159: #2  0x3f29009 in ???
+159: #3  0x3d7778d in ???
+155: #1  0x14a25374b64d in ???
+155: #2  0x3f29009 in ???
+155: #3  0x3d7778d in ???
+151: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+153: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+154: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+156: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+157: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+158: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+159: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+152: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+155: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+151: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+152: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+153: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+156: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+157: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+159: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+154: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+158: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+151: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+152: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+153: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+154: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+154: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+157: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+157: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+157: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+158: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+158: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+158: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+159: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+159: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+159: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+152: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+152: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+153: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+153: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+154: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+155: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+156: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+156: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+156: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+155: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+155: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+155: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+151: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+151: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+153: #9  0x303992c in __mom_MOD_initialize_mom
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+154: #9  0x303992c in __mom_MOD_initialize_mom
+156: #9  0x303992c in __mom_MOD_initialize_mom
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+157: #9  0x303992c in __mom_MOD_initialize_mom
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+158: #9  0x303992c in __mom_MOD_initialize_mom
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+159: #9  0x303992c in __mom_MOD_initialize_mom
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+152: #9  0x303992c in __mom_MOD_initialize_mom
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+155: #9  0x303992c in __mom_MOD_initialize_mom
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+151: #9  0x303992c in __mom_MOD_initialize_mom
+153: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+156: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+157: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+158: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+159: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+152: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+155: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+154: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+152: #11  0x2fed886 in initializeadvertise
+159: #11  0x2fed886 in initializeadvertise
+159: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+159: #12  0x66b372 in ???
+159: #13  0x66b6e6 in ???
+159: #14  0xc85dfd in ???
+159: #15  0xc88b81 in ???
+159: #16  0xd07b26 in ???
+159: #17  0x669f4f in ???
+159: #18  0x5b0fc7 in ???
+151: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+153: #11  0x2fed886 in initializeadvertise
+153: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+153: #12  0x66b372 in ???
+153: #13  0x66b6e6 in ???
+153: #14  0xc85dfd in ???
+153: #15  0xc88b81 in ???
+153: #16  0xd07b26 in ???
+153: #17  0x669f4f in ???
+153: #18  0x5b0fc7 in ???
+153: #19  0x629c23 in ???
+153: #20  0x55dbb5 in ???
+153: #21  0x590633 in ???
+153: #22  0x594ef5 in ???
+153: #23  0x66b372 in ???
+153: #24  0x66b6e6 in ???
+153: #25  0xc88a40 in ???
+153: #26  0xd07b26 in ???
+153: #27  0x669f4f in ???
+153: #28  0x5b0fc7 in ???
+153: #29  0x629c23 in ???
+155: #11  0x2fed886 in initializeadvertise
+155: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+155: #12  0x66b372 in ???
+155: #13  0x66b6e6 in ???
+155: #14  0xc85dfd in ???
+155: #15  0xc88b81 in ???
+155: #16  0xd07b26 in ???
+155: #17  0x669f4f in ???
+155: #18  0x5b0fc7 in ???
+155: #19  0x629c23 in ???
+155: #20  0x55dbb5 in ???
+155: #21  0x590633 in ???
+155: #22  0x594ef5 in ???
+155: #23  0x66b372 in ???
+155: #24  0x66b6e6 in ???
+155: #25  0xc88a40 in ???
+155: #26  0xd07b26 in ???
+155: #27  0x669f4f in ???
+155: #28  0x5b0fc7 in ???
+155: #29  0x629c23 in ???
+155: #30  0x41ea21 in ufs
+155: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+155: #31  0x41e01c in main
+155: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+156: #11  0x2fed886 in initializeadvertise
+156: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+156: #12  0x66b372 in ???
+156: #13  0x66b6e6 in ???
+156: #14  0xc85dfd in ???
+156: #15  0xc88b81 in ???
+156: #16  0xd07b26 in ???
+156: #17  0x669f4f in ???
+156: #18  0x5b0fc7 in ???
+156: #19  0x629c23 in ???
+156: #20  0x55dbb5 in ???
+156: #21  0x590633 in ???
+156: #22  0x594ef5 in ???
+156: #23  0x66b372 in ???
+156: #24  0x66b6e6 in ???
+156: #25  0xc88a40 in ???
+156: #26  0xd07b26 in ???
+156: #27  0x669f4f in ???
+156: #28  0x5b0fc7 in ???
+156: #29  0x629c23 in ???
+156: #30  0x41ea21 in ufs
+156: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+156: #31  0x41e01c in main
+156: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+157: #11  0x2fed886 in initializeadvertise
+157: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+157: #12  0x66b372 in ???
+157: #13  0x66b6e6 in ???
+157: #14  0xc85dfd in ???
+157: #15  0xc88b81 in ???
+157: #16  0xd07b26 in ???
+157: #17  0x669f4f in ???
+157: #18  0x5b0fc7 in ???
+157: #19  0x629c23 in ???
+157: #20  0x55dbb5 in ???
+157: #21  0x590633 in ???
+157: #22  0x594ef5 in ???
+157: #23  0x66b372 in ???
+157: #24  0x66b6e6 in ???
+157: #25  0xc88a40 in ???
+157: #26  0xd07b26 in ???
+157: #27  0x669f4f in ???
+157: #28  0x5b0fc7 in ???
+157: #29  0x629c23 in ???
+157: #30  0x41ea21 in ufs
+157: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+157: #31  0x41e01c in main
+157: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+158: #11  0x2fed886 in initializeadvertise
+158: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+158: #12  0x66b372 in ???
+158: #13  0x66b6e6 in ???
+158: #14  0xc85dfd in ???
+158: #15  0xc88b81 in ???
+158: #16  0xd07b26 in ???
+158: #17  0x669f4f in ???
+158: #18  0x5b0fc7 in ???
+158: #19  0x629c23 in ???
+158: #20  0x55dbb5 in ???
+158: #21  0x590633 in ???
+158: #22  0x594ef5 in ???
+158: #23  0x66b372 in ???
+158: #24  0x66b6e6 in ???
+158: #25  0xc88a40 in ???
+158: #26  0xd07b26 in ???
+158: #27  0x669f4f in ???
+158: #28  0x5b0fc7 in ???
+158: #29  0x629c23 in ???
+158: #30  0x41ea21 in ufs
+158: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+158: #31  0x41e01c in main
+158: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+159: #19  0x629c23 in ???
+159: #20  0x55dbb5 in ???
+159: #21  0x590633 in ???
+159: #22  0x594ef5 in ???
+159: #23  0x66b372 in ???
+159: #24  0x66b6e6 in ???
+159: #25  0xc88a40 in ???
+159: #26  0xd07b26 in ???
+159: #27  0x669f4f in ???
+159: #28  0x5b0fc7 in ???
+159: #29  0x629c23 in ???
+159: #30  0x41ea21 in ufs
+159: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+159: #31  0x41e01c in main
+159: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+153: #30  0x41ea21 in ufs
+153: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+153: #31  0x41e01c in main
+153: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+154: #11  0x2fed886 in initializeadvertise
+154: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+154: #12  0x66b372 in ???
+154: #13  0x66b6e6 in ???
+154: #14  0xc85dfd in ???
+154: #15  0xc88b81 in ???
+154: #16  0xd07b26 in ???
+154: #17  0x669f4f in ???
+154: #18  0x5b0fc7 in ???
+154: #19  0x629c23 in ???
+154: #20  0x55dbb5 in ???
+154: #21  0x590633 in ???
+154: #22  0x594ef5 in ???
+154: #23  0x66b372 in ???
+154: #24  0x66b6e6 in ???
+154: #25  0xc88a40 in ???
+154: #26  0xd07b26 in ???
+154: #27  0x669f4f in ???
+154: #28  0x5b0fc7 in ???
+154: #29  0x629c23 in ???
+154: #30  0x41ea21 in ufs
+154: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+154: #31  0x41e01c in main
+154: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+152: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+152: #12  0x66b372 in ???
+160: #0  0x14b3cf1f4d8f in ???
+160: #1  0x14b3cf26a64d in ???
+160: #2  0x3f29009 in ???
+160: #3  0x3d7778d in ???
+152: #13  0x66b6e6 in ???
+152: #14  0xc85dfd in ???
+151: #11  0x2fed886 in initializeadvertise
+151: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+151: #12  0x66b372 in ???
+151: #13  0x66b6e6 in ???
+151: #14  0xc85dfd in ???
+151: #15  0xc88b81 in ???
+151: #16  0xd07b26 in ???
+151: #17  0x669f4f in ???
+151: #18  0x5b0fc7 in ???
+151: #19  0x629c23 in ???
+151: #20  0x55dbb5 in ???
+151: #21  0x590633 in ???
+151: #22  0x594ef5 in ???
+151: #23  0x66b372 in ???
+151: #24  0x66b6e6 in ???
+151: #25  0xc88a40 in ???
+151: #26  0xd07b26 in ???
+151: #27  0x669f4f in ???
+151: #28  0x5b0fc7 in ???
+151: #29  0x629c23 in ???
+151: #30  0x41ea21 in ufs
+151: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+151: #31  0x41e01c in main
+151: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+161: #0  0x149de1eafd8f in ???
+161: #1  0x149de1f2564d in ???
+161: #2  0x3f29009 in ???
+161: #3  0x3d7778d in ???
+152: #15  0xc88b81 in ???
+162: #0  0x147a59a74d8f in ???
+162: #1  0x147a59aea64d in ???
+162: #2  0x3f29009 in ???
+162: #3  0x3d7778d in ???
+152: #16  0xd07b26 in ???
+164: #0  0x1460e6551d8f in ???
+164: #1  0x1460e65c764d in ???
+164: #2  0x3f29009 in ???
+164: #3  0x3d7778d in ???
+152: #17  0x669f4f in ???
+166: #0  0x14c751292d8f in ???
+152: #18  0x5b0fc7 in ???
+167: #0  0x14fb99e87d8f in ???
+167: #1  0x14fb99efd64d in ???
+167: #2  0x3f29009 in ???
+167: #3  0x3d7778d in ???
+152: #19  0x629c23 in ???
+152: #20  0x55dbb5 in ???
+152: #21  0x590633 in ???
+152: #22  0x594ef5 in ???
+152: #23  0x66b372 in ???
+152: #24  0x66b6e6 in ???
+152: #25  0xc88a40 in ???
+152: #26  0xd07b26 in ???
+152: #27  0x669f4f in ???
+152: #28  0x5b0fc7 in ???
+152: #29  0x629c23 in ???
+168: #0  0x15197ed75d8f in ???
+168: #1  0x15197edeb64d in ???
+168: #2  0x3f29009 in ???
+168: #3  0x3d7778d in ???
+152: #30  0x41ea21 in ufs
+152: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+152: #31  0x41e01c in main
+152: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+169: #0  0x153056047d8f in ???
+169: #1  0x1530560bd64d in ???
+169: #2  0x3f29009 in ???
+169: #3  0x3d7778d in ???
+163: #0  0x14845c762d8f in ???
+163: #1  0x14845c7d864d in ???
+163: #2  0x3f29009 in ???
+163: #3  0x3d7778d in ???
+165: #0  0x148f74147d8f in ???
+165: #1  0x148f741bd64d in ???
+165: #2  0x3f29009 in ???
+165: #3  0x3d7778d in ???
+166: #1  0x14c75130864d in ???
+166: #2  0x3f29009 in ???
+166: #3  0x3d7778d in ???
+160: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+163: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+165: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+168: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+161: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+162: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+164: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+167: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+169: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+166: #4  0x3521462 in __mom_io_infra_MOD_read_field_2d
+161: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+162: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+163: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+164: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+168: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+160: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+165: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+167: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+169: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/infra/FMS2/MOM_io_infra.F90:905
+161: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+162: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+163: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+165: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+168: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+169: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+169: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+169: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+160: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+160: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+160: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+161: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+161: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+162: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+162: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+163: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+163: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+164: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+164: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+164: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+165: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+165: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+167: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+167: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+167: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+168: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+168: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+166: #5  0x31fbebd in __mom_io_MOD_mom_read_data_2d
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/framework/MOM_io.F90:2172
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+166: #6  0x328d641 in __mom_shared_initialization_MOD_initialize_topography_from_file
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_shared_initialization.F90:175
+160: #9  0x303992c in __mom_MOD_initialize_mom
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+161: #9  0x303992c in __mom_MOD_initialize_mom
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+162: #9  0x303992c in __mom_MOD_initialize_mom
+166: #7  0x3275c60 in __mom_fixed_initialization_MOD_mom_initialize_topography
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:224
+166: #8  0x3275fc2 in __mom_fixed_initialization_MOD_mom_initialize_fixed
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/initialization/MOM_fixed_initialization.F90:86
+167: #9  0x303992c in __mom_MOD_initialize_mom
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+169: #9  0x303992c in __mom_MOD_initialize_mom
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+163: #9  0x303992c in __mom_MOD_initialize_mom
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+164: #9  0x303992c in __mom_MOD_initialize_mom
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+165: #9  0x303992c in __mom_MOD_initialize_mom
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+161: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+164: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+165: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+160: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+163: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+167: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+168: #9  0x303992c in __mom_MOD_initialize_mom
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+169: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+162: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+166: #9  0x303992c in __mom_MOD_initialize_mom
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/src/core/MOM.F90:2474
+168: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+160: #11  0x2fed886 in initializeadvertise
+160: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+160: #12  0x66b372 in ???
+160: #13  0x66b6e6 in ???
+160: #14  0xc85dfd in ???
+160: #15  0xc88b81 in ???
+160: #16  0xd07b26 in ???
+160: #17  0x669f4f in ???
+163: #11  0x2fed886 in initializeadvertise
+163: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+163: #12  0x66b372 in ???
+163: #13  0x66b6e6 in ???
+163: #14  0xc85dfd in ???
+163: #15  0xc88b81 in ???
+163: #16  0xd07b26 in ???
+163: #17  0x669f4f in ???
+163: #18  0x5b0fc7 in ???
+163: #19  0x629c23 in ???
+164: #11  0x2fed886 in initializeadvertise
+164: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+164: #12  0x66b372 in ???
+164: #13  0x66b6e6 in ???
+164: #14  0xc85dfd in ???
+164: #15  0xc88b81 in ???
+164: #16  0xd07b26 in ???
+164: #17  0x669f4f in ???
+164: #18  0x5b0fc7 in ???
+164: #19  0x629c23 in ???
+165: #11  0x2fed886 in initializeadvertise
+165: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+165: #12  0x66b372 in ???
+165: #13  0x66b6e6 in ???
+165: #14  0xc85dfd in ???
+165: #15  0xc88b81 in ???
+165: #16  0xd07b26 in ???
+165: #17  0x669f4f in ???
+165: #18  0x5b0fc7 in ???
+165: #19  0x629c23 in ???
+165: #20  0x55dbb5 in ???
+165: #21  0x590633 in ???
+165: #22  0x594ef5 in ???
+165: #23  0x66b372 in ???
+165: #24  0x66b6e6 in ???
+165: #25  0xc88a40 in ???
+165: #26  0xd07b26 in ???
+165: #27  0x669f4f in ???
+165: #28  0x5b0fc7 in ???
+167: #11  0x2fed886 in initializeadvertise
+167: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+167: #12  0x66b372 in ???
+167: #13  0x66b6e6 in ???
+167: #14  0xc85dfd in ???
+167: #15  0xc88b81 in ???
+167: #16  0xd07b26 in ???
+167: #17  0x669f4f in ???
+167: #18  0x5b0fc7 in ???
+167: #19  0x629c23 in ???
+167: #20  0x55dbb5 in ???
+167: #21  0x590633 in ???
+167: #22  0x594ef5 in ???
+167: #23  0x66b372 in ???
+167: #24  0x66b6e6 in ???
+167: #25  0xc88a40 in ???
+167: #26  0xd07b26 in ???
+167: #27  0x669f4f in ???
+167: #28  0x5b0fc7 in ???
+167: #29  0x629c23 in ???
+169: #11  0x2fed886 in initializeadvertise
+169: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+169: #12  0x66b372 in ???
+169: #13  0x66b6e6 in ???
+169: #14  0xc85dfd in ???
+169: #15  0xc88b81 in ???
+169: #16  0xd07b26 in ???
+169: #17  0x669f4f in ???
+169: #18  0x5b0fc7 in ???
+169: #19  0x629c23 in ???
+169: #20  0x55dbb5 in ???
+169: #21  0x590633 in ???
+169: #22  0x594ef5 in ???
+169: #23  0x66b372 in ???
+169: #24  0x66b6e6 in ???
+169: #25  0xc88a40 in ???
+169: #26  0xd07b26 in ???
+169: #27  0x669f4f in ???
+169: #28  0x5b0fc7 in ???
+169: #29  0x629c23 in ???
+160: #18  0x5b0fc7 in ???
+160: #19  0x629c23 in ???
+160: #20  0x55dbb5 in ???
+160: #21  0x590633 in ???
+160: #22  0x594ef5 in ???
+160: #23  0x66b372 in ???
+160: #24  0x66b6e6 in ???
+160: #25  0xc88a40 in ???
+160: #26  0xd07b26 in ???
+160: #27  0x669f4f in ???
+160: #28  0x5b0fc7 in ???
+160: #29  0x629c23 in ???
+160: #30  0x41ea21 in ufs
+160: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+160: #31  0x41e01c in main
+160: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+163: #20  0x55dbb5 in ???
+163: #21  0x590633 in ???
+163: #22  0x594ef5 in ???
+163: #23  0x66b372 in ???
+163: #24  0x66b6e6 in ???
+163: #25  0xc88a40 in ???
+163: #26  0xd07b26 in ???
+163: #27  0x669f4f in ???
+163: #28  0x5b0fc7 in ???
+163: #29  0x629c23 in ???
+163: #30  0x41ea21 in ufs
+163: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+163: #31  0x41e01c in main
+163: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+164: #20  0x55dbb5 in ???
+164: #21  0x590633 in ???
+164: #22  0x594ef5 in ???
+164: #23  0x66b372 in ???
+164: #24  0x66b6e6 in ???
+164: #25  0xc88a40 in ???
+164: #26  0xd07b26 in ???
+164: #27  0x669f4f in ???
+164: #28  0x5b0fc7 in ???
+164: #29  0x629c23 in ???
+164: #30  0x41ea21 in ufs
+164: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+164: #31  0x41e01c in main
+164: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+165: #29  0x629c23 in ???
+165: #30  0x41ea21 in ufs
+165: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+165: #31  0x41e01c in main
+165: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+167: #30  0x41ea21 in ufs
+167: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+167: #31  0x41e01c in main
+167: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+169: #30  0x41ea21 in ufs
+169: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+169: #31  0x41e01c in main
+169: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+161: #11  0x2fed886 in initializeadvertise
+161: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+161: #12  0x66b372 in ???
+161: #13  0x66b6e6 in ???
+161: #14  0xc85dfd in ???
+161: #15  0xc88b81 in ???
+161: #16  0xd07b26 in ???
+161: #17  0x669f4f in ???
+161: #18  0x5b0fc7 in ???
+161: #19  0x629c23 in ???
+161: #20  0x55dbb5 in ???
+161: #21  0x590633 in ???
+161: #22  0x594ef5 in ???
+161: #23  0x66b372 in ???
+161: #24  0x66b6e6 in ???
+161: #25  0xc88a40 in ???
+161: #26  0xd07b26 in ???
+161: #27  0x669f4f in ???
+161: #28  0x5b0fc7 in ???
+161: #29  0x629c23 in ???
+161: #30  0x41ea21 in ufs
+161: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+161: #31  0x41e01c in main
+161: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+162: #11  0x2fed886 in initializeadvertise
+162: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+162: #12  0x66b372 in ???
+162: #13  0x66b6e6 in ???
+162: #14  0xc85dfd in ???
+162: #15  0xc88b81 in ???
+162: #16  0xd07b26 in ???
+162: #17  0x669f4f in ???
+162: #18  0x5b0fc7 in ???
+162: #19  0x629c23 in ???
+162: #20  0x55dbb5 in ???
+162: #21  0x590633 in ???
+162: #22  0x594ef5 in ???
+162: #23  0x66b372 in ???
+162: #24  0x66b6e6 in ???
+162: #25  0xc88a40 in ???
+162: #26  0xd07b26 in ???
+162: #27  0x669f4f in ???
+162: #28  0x5b0fc7 in ???
+162: #29  0x629c23 in ???
+162: #30  0x41ea21 in ufs
+162: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+162: #31  0x41e01c in main
+162: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+166: #10  0x30120ff in __mom_ocean_model_nuopc_MOD_ocean_model_init
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90:289
+166: #11  0x2fed886 in initializeadvertise
+166: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+166: #12  0x66b372 in ???
+168: #11  0x2fed886 in initializeadvertise
+168: 	at /work/noaa/epic/jongkim/rt-2013/MOM6-interface/MOM6/config_src/drivers/nuopc_cap/mom_cap.F90:652
+168: #12  0x66b372 in ???
+168: #13  0x66b6e6 in ???
+168: #14  0xc85dfd in ???
+168: #15  0xc88b81 in ???
+168: #16  0xd07b26 in ???
+168: #17  0x669f4f in ???
+168: #18  0x5b0fc7 in ???
+168: #19  0x629c23 in ???
+168: #20  0x55dbb5 in ???
+168: #21  0x590633 in ???
+168: #22  0x594ef5 in ???
+168: #23  0x66b372 in ???
+168: #24  0x66b6e6 in ???
+168: #25  0xc88a40 in ???
+168: #26  0xd07b26 in ???
+168: #27  0x669f4f in ???
+168: #28  0x5b0fc7 in ???
+168: #29  0x629c23 in ???
+168: #30  0x41ea21 in ufs
+168: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+168: #31  0x41e01c in main
+168: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+166: #13  0x66b6e6 in ???
+166: #14  0xc85dfd in ???
+166: #15  0xc88b81 in ???
+166: #16  0xd07b26 in ???
+166: #17  0x669f4f in ???
+166: #18  0x5b0fc7 in ???
+166: #19  0x629c23 in ???
+166: #20  0x55dbb5 in ???
+166: #21  0x590633 in ???
+166: #22  0x594ef5 in ???
+166: #23  0x66b372 in ???
+166: #24  0x66b6e6 in ???
+166: #25  0xc88a40 in ???
+166: #26  0xd07b26 in ???
+166: #27  0x669f4f in ???
+166: #28  0x5b0fc7 in ???
+166: #29  0x629c23 in ???
+166: #30  0x41ea21 in ufs
+166: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:358
+166: #31  0x41e01c in main
+166: 	at /work/noaa/epic/jongkim/rt-2013/driver/UFS.F90:35
+srun: error: hercules-03-52: tasks 151-159: Segmentation fault (core dumped)
+srun: Terminating StepId=354097.0
+  0: slurmstepd: error: *** STEP 354097.0 ON hercules-03-51 CANCELLED AT 2024-01-03T10:09:46 ***
+srun: error: hercules-08-04: tasks 160-169: Segmentation fault (core dumped)
+srun: error: hercules-08-04: tasks 170-239: Terminated
+srun: error: hercules-03-52: tasks 80-150: Terminated
+srun: error: hercules-03-51: tasks 0-79: Terminated
+srun: Force Terminated StepId=354097.0
