@@ -1,1750 +1,396 @@
-Wed Mar  6 02:31:45 UTC 2024
-Start Regression test
+====START OF HERA REGRESSION TESTING LOG====
 
-Testing UFSWM Hash: 4175940e258e2265ed38328c59fdae76afc0e9bb
-Testing With Submodule Hashes:
+UFSWM hash used in testing:
+815cb2269b9d83d37cb93fedbb7796b17ec5fbd4
+
+Submodule hashes used in testing:
  37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
- 89603d16f39675624fc8518da50d9515cd5f18c6 CDEPS-interface/CDEPS (cdeps0.4.17-39-g89603d1)
+ 3d7067a523b8557058755289e4275f5f5c985daf CDEPS-interface/CDEPS (cdeps0.4.17-40-g3d7067a)
  620e48fe75d92aa607af7e21f2d8691baddd2851 CICE-interface/CICE (CICE6.0.0-445-g620e48f)
- 13ed05982efc95c077efc3b9609688554e3a854c CMEPS-interface/CMEPS (cmeps_v0.4.1-1409-g13ed059)
+ 624920ddbd819c76ec37591c24e872308201810e CMEPS-interface/CMEPS (cmeps_v0.4.1-1411-g624920d)
  cabd7753ae17f7bfcc6dad56daf10868aa51c3f4 CMakeModules (v1.0.0-28-gcabd775)
- 3e4d60b5f88a3a581526659c28c511bdde1c35b2 FV3 (remotes/origin/thompson_refactor_RRFS)
+ 4941026c5881ed623b39934905d2e4ecd9907b8a FV3 (heads/develop)
  041422934cae1570f2f0e67239d5d89f11c6e1b7 GOCART (sdr_v2.1.2.6-119-g0414229)
  35789c757766e07f688b4c0c7c5229816f224b09 HYCOM-interface/HYCOM (2.3.00-121-g35789c7)
- c8a7325c040b4cb1327c55c8248e8e66972239a5 MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-9878-gc8a7325c0)
+ 10521a921d2f442de19a0cda240d912fd918c40c MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-10030-g10521a921)
  0cd3e23ae5d35ef93e205e4d0c3b13ccc0d851f5 NOAHMP-interface/noahmp (v3.7.1-423-g0cd3e23)
  4ffc47e10e3d3f3bbee50251aacb28b7e0165b92 WW3 (6.07.1-344-g4ffc47e1)
  a5561802021d89a9a1e2b52cb69393efcdc6f71c stochastic_physics (ufs-v2.0.0-199-ga556180)
-Compile atm_debug_dyn32_intel elapsed time 286 seconds. -DAPP=ATM -DDEBUG=ON -D32BIT=ON -DCCPP_SUITES=FV3_HRRR,FV3_GFS_v16,FV3_GFS_v16_csawmg,FV3_GFS_v16_ras,FV3_GFS_v17_p8,FV3_GFS_v15_thompson_mynn_lam3km,FV3_RAP,FV3_RAP_unified_ugwp,FV3_RAP_cires_ugwp,FV3_RAP_flake,FV3_RAP_clm_lake,FV3_RAP_noah,FV3_RAP_sfcdiff,FV3_RAP_noah_sfcdiff_cires_ugwp,FV3_RRFS_v1beta,FV3_HRRR_c3,FV3_HRRR_gf,FV3_global_nest_v1 -DMPI=ON -DCMAKE_BUILD_TYPE=Debug
-Compile atm_faster_dyn32_intel elapsed time 542 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v17_p8,FV3_GFS_v15_thompson_mynn_lam3km -D32BIT=ON -DFASTER=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
-Compile rrfs_dyn32_phy32_debug_intel elapsed time 201 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_RAP,FV3_HRRR,FV3_HRRR_gf -D32BIT=ON -DCCPP_32BIT=ON -DDEBUG=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Debug
-Compile rrfs_dyn32_phy32_faster_intel elapsed time 529 seconds. -DAPP=ATM -DFASTER=ON -DCCPP_SUITES=FV3_HRRR -D32BIT=ON -DCCPP_32BIT=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
-Compile rrfs_dyn32_phy32_intel elapsed time 518 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_RAP,FV3_HRRR -D32BIT=ON -DCCPP_32BIT=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
-Compile rrfs_dyn64_phy32_debug_intel elapsed time 201 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_RAP,FV3_HRRR -DCCPP_32BIT=ON -DDEBUG=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Debug
-Compile rrfs_dyn64_phy32_intel elapsed time 528 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_RAP,FV3_HRRR -DCCPP_32BIT=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
-Compile rrfs_intel elapsed time 554 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_RAP,FV3_RAP_sfcdiff,FV3_HRRR,FV3_RRFS_v1beta,FV3_RRFS_v1nssl -D32BIT=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_control_intel
-Checking test 001 rap_control_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf021.nc .........OK
- Comparing sfcf024.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf021.nc .........OK
- Comparing atmf024.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF21 .........OK
- Comparing GFSFLX.GrbF24 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF21 .........OK
- Comparing GFSPRS.GrbF24 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 451.818009
-  0: The maximum resident set size (KB)                   = 1080956
-
-Test 001 rap_control_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/regional_spp_sppt_shum_skeb_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/regional_spp_sppt_shum_skeb_intel
-Checking test 002 regional_spp_sppt_shum_skeb_intel results ....
- Comparing dynf000.nc .........OK
- Comparing dynf001.nc .........OK
- Comparing phyf000.nc .........OK
- Comparing phyf001.nc .........OK
- Comparing PRSLEV.GrbF00 .........OK
- Comparing PRSLEV.GrbF01 .........OK
- Comparing NATLEV.GrbF00 .........OK
- Comparing NATLEV.GrbF01 .........OK
-
-  0: The total amount of wall time                        = 233.966412
-  0: The maximum resident set size (KB)                   = 1315156
-
-Test 002 regional_spp_sppt_shum_skeb_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_decomp_intel
-Checking test 003 rap_decomp_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf021.nc .........OK
- Comparing sfcf024.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf021.nc .........OK
- Comparing atmf024.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF21 .........OK
- Comparing GFSFLX.GrbF24 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF21 .........OK
- Comparing GFSPRS.GrbF24 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 469.608216
-  0: The maximum resident set size (KB)                   = 1028820
-
-Test 003 rap_decomp_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_2threads_intel
-Checking test 004 rap_2threads_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf021.nc .........OK
- Comparing sfcf024.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf021.nc .........OK
- Comparing atmf024.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF21 .........OK
- Comparing GFSFLX.GrbF24 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF21 .........OK
- Comparing GFSPRS.GrbF24 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 422.306357
-  0: The maximum resident set size (KB)                   = 1189332
-
-Test 004 rap_2threads_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_restart_intel
-Checking test 005 rap_restart_intel results ....
- Comparing sfcf024.nc .........OK
- Comparing atmf024.nc .........OK
- Comparing GFSFLX.GrbF24 .........OK
- Comparing GFSPRS.GrbF24 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 229.562476
-  0: The maximum resident set size (KB)                   = 1098104
-
-Test 005 rap_restart_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_sfcdiff_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_sfcdiff_intel
-Checking test 006 rap_sfcdiff_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 447.997191
-  0: The maximum resident set size (KB)                   = 1108840
-
-Test 006 rap_sfcdiff_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_sfcdiff_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_sfcdiff_decomp_intel
-Checking test 007 rap_sfcdiff_decomp_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 472.422555
-  0: The maximum resident set size (KB)                   = 1021548
-
-Test 007 rap_sfcdiff_decomp_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_sfcdiff_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_sfcdiff_restart_intel
-Checking test 008 rap_sfcdiff_restart_intel results ....
- Comparing sfcf012.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 335.897851
-  0: The maximum resident set size (KB)                   = 1118700
-
-Test 008 rap_sfcdiff_restart_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_intel
-Checking test 009 hrrr_control_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210322.120000.coupler.res .........OK
- Comparing RESTART/20210322.120000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 227.080532
-  0: The maximum resident set size (KB)                   = 998684
-
-Test 009 hrrr_control_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_decomp_intel
-Checking test 010 hrrr_control_decomp_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210322.120000.coupler.res .........OK
- Comparing RESTART/20210322.120000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 234.592881
-  0: The maximum resident set size (KB)                   = 983916
-
-Test 010 hrrr_control_decomp_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_2threads_intel
-Checking test 011 hrrr_control_2threads_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210322.120000.coupler.res .........OK
- Comparing RESTART/20210322.120000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 209.181551
-  0: The maximum resident set size (KB)                   = 1110096
-
-Test 011 hrrr_control_2threads_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_restart_intel
-Checking test 012 hrrr_control_restart_intel results ....
- Comparing sfcf012.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF12 .........OK
-
-  0: The total amount of wall time                        = 119.085324
-  0: The maximum resident set size (KB)                   = 996828
-
-Test 012 hrrr_control_restart_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rrfs_v1beta_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rrfs_v1beta_intel
-Checking test 013 rrfs_v1beta_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 443.579417
-  0: The maximum resident set size (KB)                   = 1081908
-
-Test 013 rrfs_v1beta_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rrfs_v1nssl_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rrfs_v1nssl_intel
-Checking test 014 rrfs_v1nssl_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
-
-  0: The total amount of wall time                        = 534.105203
-  0: The maximum resident set size (KB)                   = 1954280
-
-Test 014 rrfs_v1nssl_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rrfs_v1nssl_nohailnoccn_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rrfs_v1nssl_nohailnoccn_intel
-Checking test 015 rrfs_v1nssl_nohailnoccn_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
-
-  0: The total amount of wall time                        = 518.732594
-  0: The maximum resident set size (KB)                   = 2045628
-
-Test 015 rrfs_v1nssl_nohailnoccn_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_p8_faster_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_p8_faster_intel
-Checking test 016 control_p8_faster_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf021.nc .........OK
- Comparing sfcf024.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf021.nc .........OK
- Comparing atmf024.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF21 .........OK
- Comparing GFSFLX.GrbF24 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF21 .........OK
- Comparing GFSPRS.GrbF24 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 146.885895
-  0: The maximum resident set size (KB)                   = 1603416
-
-Test 016 control_p8_faster_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/regional_control_faster_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/regional_control_faster_intel
-Checking test 017 regional_control_faster_intel results ....
- Comparing dynf000.nc .........OK
- Comparing dynf006.nc .........OK
- Comparing phyf000.nc .........OK
- Comparing phyf006.nc .........OK
- Comparing PRSLEV.GrbF00 .........OK
- Comparing PRSLEV.GrbF06 .........OK
- Comparing NATLEV.GrbF00 .........OK
- Comparing NATLEV.GrbF06 .........OK
-
-  0: The total amount of wall time                        = 266.038073
-  0: The maximum resident set size (KB)                   = 890492
-
-Test 017 regional_control_faster_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_CubedSphereGrid_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_CubedSphereGrid_debug_intel
-Checking test 018 control_CubedSphereGrid_debug_intel results ....
- Comparing sfcf000.tile1.nc .........OK
- Comparing sfcf000.tile2.nc .........OK
- Comparing sfcf000.tile3.nc .........OK
- Comparing sfcf000.tile4.nc .........OK
- Comparing sfcf000.tile5.nc .........OK
- Comparing sfcf000.tile6.nc .........OK
- Comparing sfcf001.tile1.nc .........OK
- Comparing sfcf001.tile2.nc .........OK
- Comparing sfcf001.tile3.nc .........OK
- Comparing sfcf001.tile4.nc .........OK
- Comparing sfcf001.tile5.nc .........OK
- Comparing sfcf001.tile6.nc .........OK
- Comparing atmf000.tile1.nc .........OK
- Comparing atmf000.tile2.nc .........OK
- Comparing atmf000.tile3.nc .........OK
- Comparing atmf000.tile4.nc .........OK
- Comparing atmf000.tile5.nc .........OK
- Comparing atmf000.tile6.nc .........OK
- Comparing atmf001.tile1.nc .........OK
- Comparing atmf001.tile2.nc .........OK
- Comparing atmf001.tile3.nc .........OK
- Comparing atmf001.tile4.nc .........OK
- Comparing atmf001.tile5.nc .........OK
- Comparing atmf001.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 147.386575
-  0: The maximum resident set size (KB)                   = 817068
-
-Test 018 control_CubedSphereGrid_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_wrtGauss_netcdf_parallel_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_wrtGauss_netcdf_parallel_debug_intel
-Checking test 019 control_wrtGauss_netcdf_parallel_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 147.804905
-  0: The maximum resident set size (KB)                   = 786768
-
-Test 019 control_wrtGauss_netcdf_parallel_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_stochy_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_stochy_debug_intel
-Checking test 020 control_stochy_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 172.907618
-  0: The maximum resident set size (KB)                   = 783424
-
-Test 020 control_stochy_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_lndp_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_lndp_debug_intel
-Checking test 021 control_lndp_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 150.783560
-  0: The maximum resident set size (KB)                   = 817772
-
-Test 021 control_lndp_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_csawmg_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_csawmg_debug_intel
-Checking test 022 control_csawmg_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 235.811194
-  0: The maximum resident set size (KB)                   = 865940
-
-Test 022 control_csawmg_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_csawmgt_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_csawmgt_debug_intel
-Checking test 023 control_csawmgt_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 224.042022
-  0: The maximum resident set size (KB)                   = 845696
-
-Test 023 control_csawmgt_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_ras_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_ras_debug_intel
-Checking test 024 control_ras_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 151.571907
-  0: The maximum resident set size (KB)                   = 823556
-
-Test 024 control_ras_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_diag_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_diag_debug_intel
-Checking test 025 control_diag_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 154.912607
-  0: The maximum resident set size (KB)                   = 857616
-
-Test 025 control_diag_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/control_debug_p8_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/control_debug_p8_intel
-Checking test 026 control_debug_p8_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 156.618058
-  0: The maximum resident set size (KB)                   = 1608444
-
-Test 026 control_debug_p8_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/regional_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/regional_debug_intel
-Checking test 027 regional_debug_intel results ....
- Comparing dynf000.nc .........OK
- Comparing dynf001.nc .........OK
- Comparing phyf000.nc .........OK
- Comparing phyf001.nc .........OK
-
-  0: The total amount of wall time                        = 977.653692
-  0: The maximum resident set size (KB)                   = 858000
-
-Test 027 regional_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_control_debug_intel
-Checking test 028 rap_control_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 273.017932
-  0: The maximum resident set size (KB)                   = 1201500
-
-Test 028 rap_control_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_debug_intel
-Checking test 029 hrrr_control_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 268.329843
-  0: The maximum resident set size (KB)                   = 1200572
-
-Test 029 hrrr_control_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_gf_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_gf_debug_intel
-Checking test 030 hrrr_gf_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 285.669078
-  0: The maximum resident set size (KB)                   = 1198676
-
-Test 030 hrrr_gf_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_c3_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_c3_debug_intel
-Checking test 031 hrrr_c3_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 277.307842
-  0: The maximum resident set size (KB)                   = 1177944
-
-Test 031 hrrr_c3_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_unified_drag_suite_debug_intel
-Checking test 032 rap_unified_drag_suite_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 275.633083
-  0: The maximum resident set size (KB)                   = 1190092
-
-Test 032 rap_unified_drag_suite_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_diag_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_diag_debug_intel
-Checking test 033 rap_diag_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 286.399086
-  0: The maximum resident set size (KB)                   = 1248300
-
-Test 033 rap_diag_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_cires_ugwp_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_cires_ugwp_debug_intel
-Checking test 034 rap_cires_ugwp_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 284.774644
-  0: The maximum resident set size (KB)                   = 1177924
-
-Test 034 rap_cires_ugwp_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_cires_ugwp_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_unified_ugwp_debug_intel
-Checking test 035 rap_unified_ugwp_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 290.071259
-  0: The maximum resident set size (KB)                   = 1188916
-
-Test 035 rap_unified_ugwp_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_lndp_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_lndp_debug_intel
-Checking test 036 rap_lndp_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 273.943864
-  0: The maximum resident set size (KB)                   = 1194488
-
-Test 036 rap_lndp_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_progcld_thompson_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_progcld_thompson_debug_intel
-Checking test 037 rap_progcld_thompson_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 274.115033
-  0: The maximum resident set size (KB)                   = 1183232
-
-Test 037 rap_progcld_thompson_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_noah_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_noah_debug_intel
-Checking test 038 rap_noah_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 268.868126
-  0: The maximum resident set size (KB)                   = 1200068
-
-Test 038 rap_noah_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_sfcdiff_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_sfcdiff_debug_intel
-Checking test 039 rap_sfcdiff_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 272.080338
-  0: The maximum resident set size (KB)                   = 1202696
-
-Test 039 rap_sfcdiff_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_noah_sfcdiff_cires_ugwp_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_noah_sfcdiff_cires_ugwp_debug_intel
-Checking test 040 rap_noah_sfcdiff_cires_ugwp_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 448.596988
-  0: The maximum resident set size (KB)                   = 1194784
-
-Test 040 rap_noah_sfcdiff_cires_ugwp_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rrfs_v1beta_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rrfs_v1beta_debug_intel
-Checking test 041 rrfs_v1beta_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 276.348784
-  0: The maximum resident set size (KB)                   = 1179284
-
-Test 041 rrfs_v1beta_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_clm_lake_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_clm_lake_debug_intel
-Checking test 042 rap_clm_lake_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 335.044296
-  0: The maximum resident set size (KB)                   = 1202236
-
-Test 042 rap_clm_lake_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_flake_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_flake_debug_intel
-Checking test 043 rap_flake_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 279.465019
-  0: The maximum resident set size (KB)                   = 1166592
-
-Test 043 rap_flake_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/gnv1_c96_no_nest_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/gnv1_c96_no_nest_debug_intel
-Checking test 044 gnv1_c96_no_nest_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing sfcf002.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
- Comparing atmf002.nc .........OK
- Comparing RESTART/20210322.070000.coupler.res .........OK
- Comparing RESTART/20210322.070000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.070000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.070000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.070000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.070000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.070000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.070000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.070000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.070000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.070000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.070000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.070000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.070000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.070000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.070000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.070000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.070000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.070000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.070000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.070000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.070000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.070000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.070000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.070000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.070000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.070000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.070000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.070000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.070000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.070000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.070000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 480.152500
-  0: The maximum resident set size (KB)                   = 1203144
-
-Test 044 gnv1_c96_no_nest_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/regional_spp_sppt_shum_skeb_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/regional_spp_sppt_shum_skeb_dyn32_phy32_intel
-Checking test 045 regional_spp_sppt_shum_skeb_dyn32_phy32_intel results ....
- Comparing dynf000.nc .........OK
- Comparing dynf001.nc .........OK
- Comparing phyf000.nc .........OK
- Comparing phyf001.nc .........OK
- Comparing PRSLEV.GrbF00 .........OK
- Comparing PRSLEV.GrbF01 .........OK
- Comparing NATLEV.GrbF00 .........OK
- Comparing NATLEV.GrbF01 .........OK
-
-  0: The total amount of wall time                        = 222.382515
-  0: The maximum resident set size (KB)                   = 1181124
-
-Test 045 regional_spp_sppt_shum_skeb_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_control_dyn32_phy32_intel
-Checking test 046 rap_control_dyn32_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 371.855943
-  0: The maximum resident set size (KB)                   = 1026824
-
-Test 046 rap_control_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_dyn32_phy32_intel
-Checking test 047 hrrr_control_dyn32_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210322.120000.coupler.res .........OK
- Comparing RESTART/20210322.120000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 189.708503
-  0: The maximum resident set size (KB)                   = 964640
-
-Test 047 hrrr_control_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_2threads_dyn32_phy32_intel
-Checking test 048 rap_2threads_dyn32_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 353.482240
-  0: The maximum resident set size (KB)                   = 1109920
-
-Test 048 rap_2threads_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_2threads_dyn32_phy32_intel
-Checking test 049 hrrr_control_2threads_dyn32_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210322.120000.coupler.res .........OK
- Comparing RESTART/20210322.120000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 177.419592
-  0: The maximum resident set size (KB)                   = 953216
-
-Test 049 hrrr_control_2threads_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_decomp_dyn32_phy32_intel
-Checking test 050 hrrr_control_decomp_dyn32_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210322.120000.coupler.res .........OK
- Comparing RESTART/20210322.120000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.120000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.120000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 201.103311
-  0: The maximum resident set size (KB)                   = 897108
-
-Test 050 hrrr_control_decomp_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_restart_dyn32_phy32_intel
-Checking test 051 rap_restart_dyn32_phy32_intel results ....
- Comparing sfcf012.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210323.060000.coupler.res .........OK
- Comparing RESTART/20210323.060000.fv_core.res.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210323.060000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210323.060000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 275.035728
-  0: The maximum resident set size (KB)                   = 1021204
-
-Test 051 rap_restart_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_restart_dyn32_phy32_intel
-Checking test 052 hrrr_control_restart_dyn32_phy32_intel results ....
- Comparing sfcf012.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF12 .........OK
-
-  0: The total amount of wall time                        = 100.773313
-  0: The maximum resident set size (KB)                   = 933308
-
-Test 052 hrrr_control_restart_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/conus13km_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/conus13km_control_intel
-Checking test 053 conus13km_control_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing sfcf002.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
- Comparing atmf002.nc .........OK
- Comparing RESTART/20210512.170000.coupler.res .........OK
- Comparing RESTART/20210512.170000.fv_core.res.nc .........OK
- Comparing RESTART/20210512.170000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210512.170000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210512.170000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210512.170000.phy_data.nc .........OK
- Comparing RESTART/20210512.170000.sfc_data.nc .........OK
-
-  0: The total amount of wall time                        = 106.063324
-  0: The maximum resident set size (KB)                   = 1189988
-
-Test 053 conus13km_control_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/conus13km_control_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/conus13km_2threads_intel
-Checking test 054 conus13km_2threads_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 41.013801
-  0: The maximum resident set size (KB)                   = 1110532
-
-Test 054 conus13km_2threads_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/conus13km_restart_mismatch_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/conus13km_restart_mismatch_intel
-Checking test 055 conus13km_restart_mismatch_intel results ....
- Comparing sfcf002.nc .........OK
- Comparing atmf002.nc .........OK
-
-  0: The total amount of wall time                        = 59.516955
-  0: The maximum resident set size (KB)                   = 1107204
-
-Test 055 conus13km_restart_mismatch_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_dyn64_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_control_dyn64_phy32_intel
-Checking test 056 rap_control_dyn64_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf009.nc .........OK
- Comparing sfcf012.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf009.nc .........OK
- Comparing atmf012.nc .........OK
- Comparing GFSFLX.GrbF00 .........OK
- Comparing GFSFLX.GrbF09 .........OK
- Comparing GFSFLX.GrbF12 .........OK
- Comparing GFSPRS.GrbF00 .........OK
- Comparing GFSPRS.GrbF09 .........OK
- Comparing GFSPRS.GrbF12 .........OK
- Comparing RESTART/20210322.180000.coupler.res .........OK
- Comparing RESTART/20210322.180000.fv_core.res.nc .........OK
- Comparing RESTART/20210322.180000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210322.180000.fv_core.res.tile2.nc .........OK
- Comparing RESTART/20210322.180000.fv_core.res.tile3.nc .........OK
- Comparing RESTART/20210322.180000.fv_core.res.tile4.nc .........OK
- Comparing RESTART/20210322.180000.fv_core.res.tile5.nc .........OK
- Comparing RESTART/20210322.180000.fv_core.res.tile6.nc .........OK
- Comparing RESTART/20210322.180000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210322.180000.fv_srf_wnd.res.tile2.nc .........OK
- Comparing RESTART/20210322.180000.fv_srf_wnd.res.tile3.nc .........OK
- Comparing RESTART/20210322.180000.fv_srf_wnd.res.tile4.nc .........OK
- Comparing RESTART/20210322.180000.fv_srf_wnd.res.tile5.nc .........OK
- Comparing RESTART/20210322.180000.fv_srf_wnd.res.tile6.nc .........OK
- Comparing RESTART/20210322.180000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210322.180000.fv_tracer.res.tile2.nc .........OK
- Comparing RESTART/20210322.180000.fv_tracer.res.tile3.nc .........OK
- Comparing RESTART/20210322.180000.fv_tracer.res.tile4.nc .........OK
- Comparing RESTART/20210322.180000.fv_tracer.res.tile5.nc .........OK
- Comparing RESTART/20210322.180000.fv_tracer.res.tile6.nc .........OK
- Comparing RESTART/20210322.180000.phy_data.tile1.nc .........OK
- Comparing RESTART/20210322.180000.phy_data.tile2.nc .........OK
- Comparing RESTART/20210322.180000.phy_data.tile3.nc .........OK
- Comparing RESTART/20210322.180000.phy_data.tile4.nc .........OK
- Comparing RESTART/20210322.180000.phy_data.tile5.nc .........OK
- Comparing RESTART/20210322.180000.phy_data.tile6.nc .........OK
- Comparing RESTART/20210322.180000.sfc_data.tile1.nc .........OK
- Comparing RESTART/20210322.180000.sfc_data.tile2.nc .........OK
- Comparing RESTART/20210322.180000.sfc_data.tile3.nc .........OK
- Comparing RESTART/20210322.180000.sfc_data.tile4.nc .........OK
- Comparing RESTART/20210322.180000.sfc_data.tile5.nc .........OK
- Comparing RESTART/20210322.180000.sfc_data.tile6.nc .........OK
-
-  0: The total amount of wall time                        = 240.722704
-  0: The maximum resident set size (KB)                   = 987804
-
-Test 056 rap_control_dyn64_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_debug_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_control_debug_dyn32_phy32_intel
-Checking test 057 rap_control_debug_dyn32_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 275.270421
-  0: The maximum resident set size (KB)                   = 1078440
-
-Test 057 rap_control_debug_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/hrrr_control_debug_dyn32_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/hrrr_control_debug_dyn32_phy32_intel
-Checking test 058 hrrr_control_debug_dyn32_phy32_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 265.497553
-  0: The maximum resident set size (KB)                   = 1086508
-
-Test 058 hrrr_control_debug_dyn32_phy32_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/conus13km_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/conus13km_debug_intel
-Checking test 059 conus13km_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
- Comparing RESTART/20210512.170000.coupler.res .........OK
- Comparing RESTART/20210512.170000.fv_core.res.nc .........OK
- Comparing RESTART/20210512.170000.fv_core.res.tile1.nc .........OK
- Comparing RESTART/20210512.170000.fv_srf_wnd.res.tile1.nc .........OK
- Comparing RESTART/20210512.170000.fv_tracer.res.tile1.nc .........OK
- Comparing RESTART/20210512.170000.phy_data.nc .........OK
- Comparing RESTART/20210512.170000.sfc_data.nc .........OK
-
-  0: The total amount of wall time                        = 785.129291
-  0: The maximum resident set size (KB)                   = 1229992
-
-Test 059 conus13km_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/conus13km_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/conus13km_debug_qr_intel
-Checking test 060 conus13km_debug_qr_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
- Comparing RESTART/20210512.170000.coupler.res .........OK
- Comparing RESTART/20210512.170000.fv_core.res.nc .........OK
- Comparing RESTART/20210512.170000.fv_core.res.tile1.nc ............ALT CHECK......OK
- Comparing RESTART/20210512.170000.fv_srf_wnd.res.tile1.nc ............ALT CHECK......OK
- Comparing RESTART/20210512.170000.fv_tracer.res.tile1.nc ............ALT CHECK......OK
- Comparing RESTART/20210512.170000.phy_data.nc ............ALT CHECK......OK
- Comparing RESTART/20210512.170000.sfc_data.nc ............ALT CHECK......OK
-
-  0: The total amount of wall time                        = 803.480244
-  0: The maximum resident set size (KB)                   = 925052
-
-Test 060 conus13km_debug_qr_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/conus13km_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/conus13km_debug_2threads_intel
-Checking test 061 conus13km_debug_2threads_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 435.756473
-  0: The maximum resident set size (KB)                   = 1151028
-
-Test 061 conus13km_debug_2threads_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/conus13km_radar_tten_debug_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/conus13km_radar_tten_debug_intel
-Checking test 062 conus13km_radar_tten_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 801.480675
-  0: The maximum resident set size (KB)                   = 1293068
-
-Test 062 conus13km_radar_tten_debug_intel PASS
-
-
-baseline dir = /scratch2/NAGAPE/epic/UFS-WM_RT/RRFS.v1/NEMSfv3gfs/develop-20240305/rap_control_debug_dyn64_phy32_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_227123/rap_control_dyn64_phy32_debug_intel
-Checking test 063 rap_control_dyn64_phy32_debug_intel results ....
- Comparing sfcf000.nc .........OK
- Comparing sfcf001.nc .........OK
- Comparing atmf000.nc .........OK
- Comparing atmf001.nc .........OK
-
-  0: The total amount of wall time                        = 282.093181
-  0: The maximum resident set size (KB)                   = 1119660
-
-Test 063 rap_control_dyn64_phy32_debug_intel PASS
-
-
-REGRESSION TEST WAS SUCCESSFUL
-Wed Mar  6 03:02:53 UTC 2024
-Elapsed time: 00h:31m:08s. Have a nice day!
+
+
+NOTES:
+[Times](Memory) are at the end of each compile/test in format [MM:SS](Size).
+The first time is for the full script (prep+run+finalize).
+The second time is specifically for the run phase.
+Times/Memory will be empty for failed tests.
+
+BASELINE DIRECTORY: /scratch2/NAGAPE/epic/UFS-WM_RT/NEMSfv3gfs/develop-20240301
+COMPARISON DIRECTORY: /scratch1/NCEPDEV/stmp2/Jong.Kim/FV3_RT/rt_78590
+
+RT.SH OPTIONS USED:
+* (-a) - HPC PROJECT ACCOUNT: nems
+* (-e) - USE ECFLOW
+
+PASS -- COMPILE 's2swa_32bit_intel' [13:09, 11:46]
+PASS -- TEST 'cpld_control_p8_mixedmode_intel' [08:33, 05:17](3113 MB)
+
+PASS -- COMPILE 's2swa_32bit_pdlib_intel' [17:09, 15:27]
+PASS -- TEST 'cpld_control_gfsv17_intel' [19:59, 16:09](1735 MB)
+PASS -- TEST 'cpld_control_gfsv17_iau_intel' [30:25, 16:54](2012 MB)
+PASS -- TEST 'cpld_restart_gfsv17_intel' [21:10, 07:42](1098 MB)
+PASS -- TEST 'cpld_mpi_gfsv17_intel' [21:54, 18:06](1609 MB)
+
+PASS -- COMPILE 's2swa_32bit_pdlib_debug_intel' [06:08, 04:07]
+PASS -- TEST 'cpld_debug_gfsv17_intel' [26:04, 22:19](1668 MB)
+
+PASS -- COMPILE 's2swa_intel' [13:08, 11:50]
+PASS -- TEST 'cpld_control_p8_intel' [08:29, 05:39](3198 MB)
+PASS -- TEST 'cpld_control_p8.v2.sfc_intel' [09:37, 05:38](3202 MB)
+PASS -- TEST 'cpld_restart_p8_intel' [06:23, 03:16](3250 MB)
+PASS -- TEST 'cpld_control_qr_p8_intel' [08:30, 05:37](3180 MB)
+PASS -- TEST 'cpld_restart_qr_p8_intel' [06:23, 03:20](3263 MB)
+PASS -- TEST 'cpld_2threads_p8_intel' [08:26, 05:24](3537 MB)
+PASS -- TEST 'cpld_decomp_p8_intel' [08:26, 05:41](3189 MB)
+PASS -- TEST 'cpld_mpi_p8_intel' [07:29, 04:39](3052 MB)
+PASS -- TEST 'cpld_control_ciceC_p8_intel' [08:38, 05:39](3183 MB)
+PASS -- TEST 'cpld_control_c192_p8_intel' [13:14, 09:36](3323 MB)
+PASS -- TEST 'cpld_restart_c192_p8_intel' [09:39, 05:51](3556 MB)
+PASS -- TEST 'cpld_bmark_p8_intel' [20:46, 09:40](4104 MB)
+PASS -- TEST 'cpld_restart_bmark_p8_intel' [26:24, 06:34](4350 MB)
+PASS -- TEST 'cpld_s2sa_p8_intel' [08:30, 05:16](3164 MB)
+
+PASS -- COMPILE 's2sw_intel' [13:09, 11:14]
+PASS -- TEST 'cpld_control_noaero_p8_intel' [07:23, 04:29](1693 MB)
+PASS -- TEST 'cpld_control_nowave_noaero_p8_intel' [07:30, 04:18](1772 MB)
+
+PASS -- COMPILE 's2swa_debug_intel' [06:07, 03:58]
+PASS -- TEST 'cpld_debug_p8_intel' [11:07, 08:04](3238 MB)
+
+PASS -- COMPILE 's2sw_debug_intel' [05:06, 03:46]
+PASS -- TEST 'cpld_debug_noaero_p8_intel' [07:59, 05:33](1742 MB)
+
+PASS -- COMPILE 's2s_aoflux_intel' [12:09, 10:21]
+PASS -- TEST 'cpld_control_noaero_p8_agrid_intel' [07:03, 04:27](1722 MB)
+
+PASS -- COMPILE 's2s_intel' [12:09, 10:23]
+PASS -- TEST 'cpld_control_c48_intel' [11:47, 09:27](2802 MB)
+
+PASS -- COMPILE 's2swa_faster_intel' [18:09, 16:07]
+PASS -- TEST 'cpld_control_p8_faster_intel' [09:18, 05:15](3197 MB)
+
+PASS -- COMPILE 's2sw_pdlib_intel' [16:10, 14:57]
+PASS -- TEST 'cpld_control_pdlib_p8_intel' [19:04, 16:18](1725 MB)
+PASS -- TEST 'cpld_restart_pdlib_p8_intel' [18:15, 07:48](1158 MB)
+PASS -- TEST 'cpld_mpi_pdlib_p8_intel' [29:06, 18:43](1644 MB)
+
+PASS -- COMPILE 's2sw_pdlib_debug_intel' [05:06, 03:39]
+PASS -- TEST 'cpld_debug_pdlib_p8_intel' [27:04, 24:09](1682 MB)
+
+PASS -- COMPILE 'atm_dyn32_intel' [12:08, 10:15]
+PASS -- TEST 'control_flake_intel' [06:21, 03:18](698 MB)
+PASS -- TEST 'control_CubedSphereGrid_intel' [05:24, 02:21](647 MB)
+PASS -- TEST 'control_CubedSphereGrid_parallel_intel' [05:26, 02:29](625 MB)
+PASS -- TEST 'control_latlon_intel' [05:21, 02:25](620 MB)
+PASS -- TEST 'control_wrtGauss_netcdf_parallel_intel' [05:28, 02:25](632 MB)
+PASS -- TEST 'control_c48_intel' [08:24, 06:14](873 MB)
+PASS -- TEST 'control_c48.v2.sfc_intel' [08:24, 06:10](874 MB)
+PASS -- TEST 'control_c192_intel' [11:35, 08:56](841 MB)
+PASS -- TEST 'control_c384_intel' [12:19, 08:59](1286 MB)
+PASS -- TEST 'control_c384gdas_intel' [11:33, 07:55](1392 MB)
+PASS -- TEST 'control_stochy_intel' [03:22, 01:37](631 MB)
+PASS -- TEST 'control_stochy_restart_intel' [03:24, 00:59](488 MB)
+PASS -- TEST 'control_lndp_intel' [03:18, 01:31](652 MB)
+PASS -- TEST 'control_iovr4_intel' [05:19, 02:25](620 MB)
+PASS -- TEST 'control_iovr5_intel' [04:22, 02:25](631 MB)
+PASS -- TEST 'control_p8_intel' [05:00, 02:54](1620 MB)
+PASS -- TEST 'control_p8.v2.sfc_intel' [05:04, 02:54](1590 MB)
+PASS -- TEST 'control_p8_ugwpv1_intel' [04:57, 02:50](1615 MB)
+PASS -- TEST 'control_restart_p8_intel' [03:48, 01:35](878 MB)
+PASS -- TEST 'control_noqr_p8_intel' [04:47, 02:52](1579 MB)
+PASS -- TEST 'control_restart_noqr_p8_intel' [03:50, 01:34](900 MB)
+PASS -- TEST 'control_decomp_p8_intel' [04:49, 02:59](1598 MB)
+PASS -- TEST 'control_2threads_p8_intel' [04:47, 02:45](1678 MB)
+PASS -- TEST 'control_p8_lndp_intel' [07:48, 05:11](1615 MB)
+PASS -- TEST 'control_p8_rrtmgp_intel' [05:54, 03:48](1659 MB)
+PASS -- TEST 'control_p8_mynn_intel' [04:56, 02:56](1605 MB)
+PASS -- TEST 'merra2_thompson_intel' [05:56, 03:26](1601 MB)
+PASS -- TEST 'regional_control_intel' [07:41, 05:04](830 MB)
+PASS -- TEST 'regional_restart_intel' [04:37, 02:41](1001 MB)
+PASS -- TEST 'regional_decomp_intel' [07:33, 05:26](847 MB)
+PASS -- TEST 'regional_2threads_intel' [05:40, 03:16](818 MB)
+PASS -- TEST 'regional_noquilt_intel' [06:40, 05:02](1362 MB)
+PASS -- TEST 'regional_netcdf_parallel_intel' [07:44, 05:07](835 MB)
+PASS -- TEST 'regional_2dwrtdecomp_intel' [07:41, 05:05](849 MB)
+PASS -- TEST 'regional_wofs_intel' [08:42, 06:33](1885 MB)
+
+PASS -- COMPILE 'rrfs_intel' [11:07, 09:43]
+PASS -- TEST 'rap_control_intel' [09:46, 07:42](1066 MB)
+PASS -- TEST 'regional_spp_sppt_shum_skeb_intel' [07:02, 04:07](1281 MB)
+PASS -- TEST 'rap_decomp_intel' [09:35, 08:00](1013 MB)
+PASS -- TEST 'rap_2threads_intel' [09:33, 07:09](1174 MB)
+PASS -- TEST 'rap_restart_intel' [18:47, 04:12](1066 MB)
+PASS -- TEST 'rap_sfcdiff_intel' [09:41, 07:38](1069 MB)
+PASS -- TEST 'rap_sfcdiff_decomp_intel' [09:38, 08:01](1029 MB)
+PASS -- TEST 'rap_sfcdiff_restart_intel' [18:45, 05:49](1127 MB)
+PASS -- TEST 'hrrr_control_intel' [05:35, 03:57](1031 MB)
+PASS -- TEST 'hrrr_control_decomp_intel' [05:31, 04:03](1023 MB)
+PASS -- TEST 'hrrr_control_2threads_intel' [05:32, 03:37](1109 MB)
+PASS -- TEST 'hrrr_control_restart_intel' [04:24, 02:10](998 MB)
+PASS -- TEST 'rrfs_v1beta_intel' [09:39, 07:32](1080 MB)
+PASS -- TEST 'rrfs_v1nssl_intel' [10:25, 09:05](1990 MB)
+PASS -- TEST 'rrfs_v1nssl_nohailnoccn_intel' [10:29, 08:50](2053 MB)
+
+PASS -- COMPILE 'csawmg_intel' [11:07, 09:27]
+PASS -- TEST 'control_csawmg_intel' [07:37, 05:49](745 MB)
+PASS -- TEST 'control_csawmgt_intel' [07:36, 05:44](736 MB)
+PASS -- TEST 'control_ras_intel' [05:18, 03:15](716 MB)
+
+PASS -- COMPILE 'wam_intel' [10:08, 08:59]
+PASS -- TEST 'control_wam_intel' [03:15, 02:03](626 MB)
+
+PASS -- COMPILE 'atm_faster_dyn32_intel' [11:09, 09:39]
+PASS -- TEST 'control_p8_faster_intel' [04:55, 02:37](1620 MB)
+PASS -- TEST 'regional_control_faster_intel' [06:39, 04:38](828 MB)
+
+PASS -- COMPILE 'atm_debug_dyn32_intel' [06:08, 04:13]
+PASS -- TEST 'control_CubedSphereGrid_debug_intel' [04:22, 02:43](815 MB)
+PASS -- TEST 'control_wrtGauss_netcdf_parallel_debug_intel' [04:24, 02:38](810 MB)
+PASS -- TEST 'control_stochy_debug_intel' [05:20, 03:00](790 MB)
+PASS -- TEST 'control_lndp_debug_intel' [05:19, 02:42](791 MB)
+PASS -- TEST 'control_csawmg_debug_intel' [06:37, 04:02](841 MB)
+PASS -- TEST 'control_csawmgt_debug_intel' [06:36, 04:04](856 MB)
+PASS -- TEST 'control_ras_debug_intel' [05:18, 02:42](822 MB)
+PASS -- TEST 'control_diag_debug_intel' [04:25, 02:47](866 MB)
+PASS -- TEST 'control_debug_p8_intel' [17:49, 02:45](1634 MB)
+PASS -- TEST 'regional_debug_intel' [30:48, 16:31](837 MB)
+PASS -- TEST 'rap_control_debug_intel' [19:26, 04:51](1204 MB)
+PASS -- TEST 'hrrr_control_debug_intel' [18:23, 04:41](1196 MB)
+PASS -- TEST 'hrrr_gf_debug_intel' [19:25, 04:48](1210 MB)
+PASS -- TEST 'hrrr_c3_debug_intel' [19:24, 04:47](1194 MB)
+PASS -- TEST 'rap_unified_drag_suite_debug_intel' [18:26, 04:51](1195 MB)
+PASS -- TEST 'rap_diag_debug_intel' [18:38, 05:02](1280 MB)
+PASS -- TEST 'rap_cires_ugwp_debug_intel' [17:27, 04:54](1208 MB)
+PASS -- TEST 'rap_unified_ugwp_debug_intel' [17:22, 04:57](1166 MB)
+PASS -- TEST 'rap_lndp_debug_intel' [17:23, 04:52](1205 MB)
+PASS -- TEST 'rap_progcld_thompson_debug_intel' [17:25, 04:50](1197 MB)
+PASS -- TEST 'rap_noah_debug_intel' [17:23, 04:41](1179 MB)
+PASS -- TEST 'rap_sfcdiff_debug_intel' [16:22, 04:52](1200 MB)
+PASS -- TEST 'rap_noah_sfcdiff_cires_ugwp_debug_intel' [19:23, 07:48](1191 MB)
+PASS -- TEST 'rrfs_v1beta_debug_intel' [16:24, 04:50](1164 MB)
+PASS -- TEST 'rap_clm_lake_debug_intel' [17:24, 05:51](1193 MB)
+PASS -- TEST 'rap_flake_debug_intel' [16:27, 04:50](1203 MB)
+PASS -- TEST 'gnv1_c96_no_nest_debug_intel' [19:36, 08:12](1203 MB)
+
+PASS -- COMPILE 'wam_debug_intel' [04:08, 02:55]
+PASS -- TEST 'control_wam_debug_intel' [06:17, 04:43](487 MB)
+
+PASS -- COMPILE 'rrfs_dyn32_phy32_intel' [11:07, 09:05]
+PASS -- TEST 'regional_spp_sppt_shum_skeb_dyn32_phy32_intel' [15:02, 03:51](1158 MB)
+PASS -- TEST 'rap_control_dyn32_phy32_intel' [17:35, 06:28](1050 MB)
+PASS -- TEST 'hrrr_control_dyn32_phy32_intel' [13:33, 03:24](958 MB)
+PASS -- TEST 'rap_2threads_dyn32_phy32_intel' [16:43, 06:05](1077 MB)
+PASS -- TEST 'hrrr_control_2threads_dyn32_phy32_intel' [05:38, 03:08](955 MB)
+PASS -- TEST 'hrrr_control_decomp_dyn32_phy32_intel' [05:28, 03:32](923 MB)
+PASS -- TEST 'rap_restart_dyn32_phy32_intel' [06:39, 04:47](1000 MB)
+PASS -- TEST 'hrrr_control_restart_dyn32_phy32_intel' [03:25, 01:49](923 MB)
+
+PASS -- COMPILE 'rrfs_dyn32_phy32_faster_intel' [13:07, 11:30]
+PASS -- TEST 'conus13km_control_intel' [04:53, 02:01](1194 MB)
+PASS -- TEST 'conus13km_2threads_intel' [03:41, 00:57](1118 MB)
+PASS -- TEST 'conus13km_restart_mismatch_intel' [03:42, 01:14](1078 MB)
+
+PASS -- COMPILE 'rrfs_dyn64_phy32_intel' [11:07, 09:14]
+PASS -- TEST 'rap_control_dyn64_phy32_intel' [06:43, 04:16](963 MB)
+
+PASS -- COMPILE 'rrfs_dyn32_phy32_debug_intel' [05:06, 03:10]
+PASS -- TEST 'rap_control_debug_dyn32_phy32_intel' [06:24, 04:39](1055 MB)
+PASS -- TEST 'hrrr_control_debug_dyn32_phy32_intel' [06:20, 04:35](1076 MB)
+PASS -- TEST 'conus13km_debug_intel' [15:53, 13:37](1191 MB)
+PASS -- TEST 'conus13km_debug_qr_intel' [15:52, 13:50](903 MB)
+PASS -- TEST 'conus13km_debug_2threads_intel' [09:46, 07:54](1147 MB)
+PASS -- TEST 'conus13km_radar_tten_debug_intel' [16:49, 13:58](1286 MB)
+
+PASS -- COMPILE 'rrfs_dyn64_phy32_debug_intel' [04:08, 03:03]
+PASS -- TEST 'rap_control_dyn64_phy32_debug_intel' [06:22, 04:45](1093 MB)
+
+PASS -- COMPILE 'hafsw_intel' [12:07, 10:28]
+PASS -- TEST 'hafs_regional_atm_intel' [08:17, 04:47](733 MB)
+PASS -- TEST 'hafs_regional_atm_thompson_gfdlsf_intel' [11:38, 05:48](1115 MB)
+PASS -- TEST 'hafs_regional_atm_ocn_intel' [13:32, 06:56](817 MB)
+PASS -- TEST 'hafs_regional_atm_wav_intel' [16:19, 12:58](855 MB)
+PASS -- TEST 'hafs_regional_atm_ocn_wav_intel' [17:31, 14:37](882 MB)
+PASS -- TEST 'hafs_regional_1nest_atm_intel' [11:09, 05:17](504 MB)
+PASS -- TEST 'hafs_regional_telescopic_2nests_atm_intel' [09:24, 06:23](518 MB)
+PASS -- TEST 'hafs_global_1nest_atm_intel' [07:46, 02:37](369 MB)
+PASS -- TEST 'hafs_global_multiple_4nests_atm_intel' [13:14, 07:06](479 MB)
+PASS -- TEST 'hafs_regional_specified_moving_1nest_atm_intel' [06:42, 03:39](526 MB)
+PASS -- TEST 'hafs_regional_storm_following_1nest_atm_intel' [07:51, 03:28](528 MB)
+PASS -- TEST 'hafs_regional_storm_following_1nest_atm_ocn_intel' [06:53, 04:03](586 MB)
+PASS -- TEST 'hafs_global_storm_following_1nest_atm_intel' [04:27, 01:11](401 MB)
+PASS -- TEST 'gnv1_nested_intel' [07:46, 03:57](799 MB)
+
+PASS -- COMPILE 'hafsw_debug_intel' [05:07, 03:21]
+PASS -- TEST 'hafs_regional_storm_following_1nest_atm_ocn_debug_intel' [14:48, 12:13](571 MB)
+
+PASS -- COMPILE 'hafsw_faster_intel' [12:07, 11:00]
+PASS -- TEST 'hafs_regional_storm_following_1nest_atm_ocn_wav_intel' [11:02, 08:26](629 MB)
+PASS -- TEST 'hafs_regional_storm_following_1nest_atm_ocn_wav_inline_intel' [11:03, 08:28](738 MB)
+
+PASS -- COMPILE 'hafs_mom6w_intel' [12:09, 10:42]
+PASS -- TEST 'hafs_regional_storm_following_1nest_atm_ocn_wav_mom6_intel' [09:04, 06:20](663 MB)
+
+PASS -- COMPILE 'hafs_all_intel' [11:07, 10:01]
+PASS -- TEST 'hafs_regional_docn_intel' [09:17, 06:10](803 MB)
+PASS -- TEST 'hafs_regional_docn_oisst_intel' [09:14, 06:18](815 MB)
+PASS -- TEST 'hafs_regional_datm_cdeps_intel' [17:57, 15:51](1205 MB)
+
+PASS -- COMPILE 'datm_cdeps_intel' [07:07, 05:51]
+PASS -- TEST 'datm_cdeps_control_cfsr_intel' [04:16, 02:39](1117 MB)
+PASS -- TEST 'datm_cdeps_restart_cfsr_intel' [03:16, 01:39](1074 MB)
+PASS -- TEST 'datm_cdeps_control_gefs_intel' [04:15, 02:36](995 MB)
+PASS -- TEST 'datm_cdeps_iau_gefs_intel' [04:15, 02:39](984 MB)
+PASS -- TEST 'datm_cdeps_stochy_gefs_intel' [04:14, 02:38](1004 MB)
+PASS -- TEST 'datm_cdeps_ciceC_cfsr_intel' [04:14, 02:44](1121 MB)
+PASS -- TEST 'datm_cdeps_bulk_cfsr_intel' [04:14, 02:37](1111 MB)
+PASS -- TEST 'datm_cdeps_bulk_gefs_intel' [04:15, 02:36](993 MB)
+PASS -- TEST 'datm_cdeps_mx025_cfsr_intel' [09:20, 06:33](1053 MB)
+PASS -- TEST 'datm_cdeps_mx025_gefs_intel' [10:14, 06:20](1017 MB)
+PASS -- TEST 'datm_cdeps_multiple_files_cfsr_intel' [04:14, 02:40](1126 MB)
+PASS -- TEST 'datm_cdeps_3072x1536_cfsr_intel' [05:14, 03:52](2480 MB)
+PASS -- TEST 'datm_cdeps_gfs_intel' [06:15, 03:55](2420 MB)
+
+PASS -- COMPILE 'datm_cdeps_debug_intel' [04:07, 03:00]
+PASS -- TEST 'datm_cdeps_debug_cfsr_intel' [08:17, 06:03](1052 MB)
+
+PASS -- COMPILE 'datm_cdeps_faster_intel' [07:08, 05:49]
+PASS -- TEST 'datm_cdeps_control_cfsr_faster_intel' [04:16, 02:41](1117 MB)
+
+PASS -- COMPILE 'datm_cdeps_land_intel' [02:06, 00:56]
+PASS -- TEST 'datm_cdeps_lnd_gswp3_intel' [02:26, 00:47](240 MB)
+PASS -- TEST 'datm_cdeps_lnd_era5_intel' [02:22, 00:51](322 MB)
+PASS -- TEST 'datm_cdeps_lnd_era5_rst_intel' [02:22, 00:29](317 MB)
+
+PASS -- COMPILE 'atml_intel' [12:10, 10:49]
+PASS -- TEST 'control_p8_atmlnd_sbs_intel' [06:59, 04:16](1565 MB)
+PASS -- TEST 'control_p8_atmlnd_intel' [07:00, 04:12](1589 MB)
+PASS -- TEST 'control_restart_p8_atmlnd_intel' [04:58, 02:15](872 MB)
+
+PASS -- COMPILE 'atmw_intel' [11:10, 09:55]
+PASS -- TEST 'atmwav_control_noaero_p8_intel' [03:53, 01:41](1658 MB)
+
+PASS -- COMPILE 'atmwm_intel' [11:07, 09:39]
+PASS -- TEST 'control_atmwav_intel' [03:31, 01:41](636 MB)
+
+PASS -- COMPILE 'atmaero_intel' [11:08, 09:41]
+PASS -- TEST 'atmaero_control_p8_intel' [07:01, 03:56](3016 MB)
+PASS -- TEST 'atmaero_control_p8_rad_intel' [07:00, 04:43](3083 MB)
+PASS -- TEST 'atmaero_control_p8_rad_micro_intel' [07:43, 05:06](3055 MB)
+
+PASS -- COMPILE 'atmaq_intel' [11:10, 09:22]
+
+PASS -- COMPILE 'atmaq_debug_intel' [05:06, 03:14]
+PASS -- TEST 'regional_atmaq_debug_intel' [22:58, 19:54](4421 MB)
+
+PASS -- COMPILE 'atm_gnu' [05:07, 03:28]
+PASS -- TEST 'control_c48_gnu' [13:26, 11:41](795 MB)
+PASS -- TEST 'control_stochy_gnu' [05:20, 03:59](552 MB)
+PASS -- TEST 'control_ras_gnu' [06:21, 05:00](561 MB)
+PASS -- TEST 'control_p8_gnu' [09:04, 04:49](1306 MB)
+PASS -- TEST 'control_p8_ugwpv1_gnu' [09:00, 04:41](1308 MB)
+PASS -- TEST 'control_flake_gnu' [07:20, 05:53](598 MB)
+
+PASS -- COMPILE 'rrfs_gnu' [05:08, 03:24]
+PASS -- TEST 'rap_control_gnu' [13:44, 11:36](897 MB)
+PASS -- TEST 'rap_decomp_gnu' [15:36, 11:57](899 MB)
+PASS -- TEST 'rap_2threads_gnu' [14:36, 10:50](987 MB)
+PASS -- TEST 'rap_restart_gnu' [07:44, 05:58](627 MB)
+PASS -- TEST 'rap_sfcdiff_gnu' [15:42, 11:44](896 MB)
+PASS -- TEST 'rap_sfcdiff_decomp_gnu' [15:36, 11:49](898 MB)
+PASS -- TEST 'rap_sfcdiff_restart_gnu' [10:38, 08:45](629 MB)
+PASS -- TEST 'hrrr_control_gnu' [09:36, 06:00](892 MB)
+PASS -- TEST 'hrrr_control_noqr_gnu' [08:47, 05:55](878 MB)
+PASS -- TEST 'hrrr_control_2threads_gnu' [07:39, 05:17](970 MB)
+PASS -- TEST 'hrrr_control_decomp_gnu' [08:33, 06:00](894 MB)
+PASS -- TEST 'hrrr_control_restart_gnu' [05:25, 03:23](610 MB)
+PASS -- TEST 'hrrr_control_restart_noqr_gnu' [05:32, 03:42](704 MB)
+PASS -- TEST 'rrfs_v1beta_gnu' [13:37, 11:21](893 MB)
+
+PASS -- COMPILE 'atm_dyn32_debug_gnu' [05:07, 03:17]
+PASS -- TEST 'control_diag_debug_gnu' [04:26, 01:38](592 MB)
+PASS -- TEST 'regional_debug_gnu' [09:39, 07:23](597 MB)
+PASS -- TEST 'rap_control_debug_gnu' [04:22, 02:34](906 MB)
+PASS -- TEST 'hrrr_control_debug_gnu' [04:17, 02:30](901 MB)
+PASS -- TEST 'hrrr_gf_debug_gnu' [04:18, 02:29](905 MB)
+PASS -- TEST 'hrrr_c3_debug_gnu' [04:16, 02:32](906 MB)
+PASS -- TEST 'rap_diag_debug_gnu' [04:33, 02:45](994 MB)
+PASS -- TEST 'rap_noah_sfcdiff_cires_ugwp_debug_gnu' [05:23, 03:54](902 MB)
+PASS -- TEST 'rap_progcld_thompson_debug_gnu' [04:19, 02:32](907 MB)
+PASS -- TEST 'rrfs_v1beta_debug_gnu' [04:22, 02:29](900 MB)
+PASS -- TEST 'control_ras_debug_gnu' [03:18, 01:34](541 MB)
+PASS -- TEST 'control_stochy_debug_gnu' [04:18, 02:11](534 MB)
+PASS -- TEST 'control_debug_p8_gnu' [03:39, 01:41](1294 MB)
+PASS -- TEST 'rap_flake_debug_gnu' [04:22, 02:33](910 MB)
+PASS -- TEST 'rap_clm_lake_debug_gnu' [06:20, 03:02](906 MB)
+PASS -- TEST 'gnv1_c96_no_nest_debug_gnu' [08:35, 04:19](911 MB)
+
+PASS -- COMPILE 'wam_debug_gnu' [03:06, 01:39]
+PASS -- TEST 'control_wam_debug_gnu' [06:15, 02:49](242 MB)
+
+PASS -- COMPILE 'rrfs_dyn32_phy32_gnu' [15:09, 03:27]
+PASS -- TEST 'rap_control_dyn32_phy32_gnu' [14:34, 12:08](750 MB)
+PASS -- TEST 'hrrr_control_dyn32_phy32_gnu' [08:27, 06:10](752 MB)
+PASS -- TEST 'rap_2threads_dyn32_phy32_gnu' [12:44, 10:48](803 MB)
+PASS -- TEST 'hrrr_control_2threads_dyn32_phy32_gnu' [07:37, 05:35](808 MB)
+PASS -- TEST 'hrrr_control_decomp_dyn32_phy32_gnu' [08:27, 06:30](748 MB)
+PASS -- TEST 'rap_restart_dyn32_phy32_gnu' [10:31, 08:53](598 MB)
+PASS -- TEST 'hrrr_control_restart_dyn32_phy32_gnu' [05:21, 03:15](581 MB)
+PASS -- TEST 'conus13km_control_gnu' [06:52, 04:45](902 MB)
+PASS -- TEST 'conus13km_2threads_gnu' [04:40, 01:50](933 MB)
+PASS -- TEST 'conus13km_restart_mismatch_gnu' [04:40, 02:21](605 MB)
+
+PASS -- COMPILE 'atm_dyn64_phy32_gnu' [17:09, 05:09]
+PASS -- TEST 'rap_control_dyn64_phy32_gnu' [09:39, 07:25](781 MB)
+
+PASS -- COMPILE 'atm_dyn32_phy32_debug_gnu' [15:09, 03:29]
+PASS -- TEST 'rap_control_debug_dyn32_phy32_gnu' [04:26, 02:59](764 MB)
+PASS -- TEST 'hrrr_control_debug_dyn32_phy32_gnu' [04:23, 02:56](761 MB)
+PASS -- TEST 'conus13km_debug_gnu' [09:48, 07:38](918 MB)
+PASS -- TEST 'conus13km_debug_qr_gnu' [09:45, 07:20](636 MB)
+PASS -- TEST 'conus13km_debug_2threads_gnu' [07:47, 04:43](957 MB)
+PASS -- TEST 'conus13km_radar_tten_debug_gnu' [09:48, 07:14](981 MB)
+
+PASS -- COMPILE 'atm_dyn64_phy32_debug_gnu' [15:07, 03:21]
+PASS -- TEST 'rap_control_dyn64_phy32_debug_gnu' [04:21, 02:58](791 MB)
+
+PASS -- COMPILE 's2swa_gnu' [25:08, 13:59]
+PASS -- TEST 'cpld_control_p8_gnu' [14:14, 11:18](1514 MB)
+
+PASS -- COMPILE 's2s_gnu' [24:12, 13:50]
+PASS -- TEST 'cpld_control_nowave_noaero_p8_gnu' [10:10, 06:45](1402 MB)
+
+PASS -- COMPILE 's2swa_debug_gnu' [13:08, 02:24]
+PASS -- TEST 'cpld_debug_p8_gnu' [09:07, 06:22](1521 MB)
+
+PASS -- COMPILE 's2sw_pdlib_gnu' [23:10, 13:42]
+PASS -- TEST 'cpld_control_pdlib_p8_gnu' [23:55, 22:02](1378 MB)
+
+PASS -- COMPILE 's2sw_pdlib_debug_gnu' [12:07, 02:14]
+PASS -- TEST 'cpld_debug_pdlib_p8_gnu' [14:52, 12:49](1384 MB)
+
+PASS -- COMPILE 'datm_cdeps_gnu' [23:11, 13:22]
+PASS -- TEST 'datm_cdeps_control_cfsr_gnu' [04:14, 02:55](700 MB)
+
+SYNOPSIS:
+Starting Date/Time: 20240311 00:28:01
+Ending Date/Time: 20240311 02:17:35
+Total Time: 01h:49m:55s
+Compiles Completed: 53/53
+Tests Completed: 243/243
+
+NOTES:
+A file 'test_changes.list' was generated but is empty.
+If you are using this log as a pull request verification, please commit 'test_changes.list'.
+
+Result: SUCCESS
+
+====END OF HERA REGRESSION TESTING LOG====
