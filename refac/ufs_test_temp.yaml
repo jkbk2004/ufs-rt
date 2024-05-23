@@ -1,0 +1,334 @@
+atm_debug_dyn32_gnu:
+  build: {compiler: gnu, option: '-DAPP=ATM -DDEBUG=ON -D32BIT=ON -DCCPP_SUITES=FV3_HRRR,FV3_GFS_v16,FV3_GFS_v16_csawmg,FV3_GFS_v16_ras,FV3_GFS_v17_p8,FV3_GFS_v15_thompson_mynn_lam3km,FV3_RAP,FV3_RAP_unified_ugwp,FV3_RAP_cires_ugwp,FV3_RAP_flake,FV3_RAP_clm_lake,FV3_RAP_noah,FV3_RAP_sfcdiff,FV3_RAP_noah_sfcdiff_cires_ugwp,FV3_RRFS_v1beta,FV3_HRRR_c3,FV3_HRRR_gf,FV3_global_nest_v1'}
+  tests:
+  - control_csawmg_debug:
+      project: [daily]
+atm_debug_dyn32_intel:
+  build:
+    compiler: intel
+    option: -DAPP=ATM -DDEBUG=ON -D32BIT=ON -DCCPP_SUITES=FV3_HRRR,FV3_GFS_v16,FV3_GFS_v16_csawmg,FV3_GFS_v16_ras,FV3_GFS_v17_p8,FV3_GFS_v15_thompson_mynn_lam3km,FV3_RAP,FV3_RAP_unified_ugwp,FV3_RAP_cires_ugwp,FV3_RAP_flake,FV3_RAP_clm_lake,FV3_RAP_noah,FV3_RAP_sfcdiff,FV3_RAP_noah_sfcdiff_cires_ugwp,FV3_RRFS_v1beta,FV3_HRRR_c3,FV3_HRRR_gf,FV3_global_nest_v1
+    turnoff: [noaacloud]
+  tests:
+  - control_csawmg_debug:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_debug_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - regional_debug:
+      project: [daily]
+      turnoff: [noaacloud]
+atm_dyn32_debug_gnu:
+  build: {compiler: gnu, option: -DAPP=ATM -D32BIT=ON -DDEBUG=ON}
+  tests:
+  - regional_debug:
+      project: [daily]
+  - control_debug_p8:
+      project: [daily]
+atm_dyn32_intel:
+  build: {compiler: intel, option: '-DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16,FV3_GFS_v16_flake,FV3_GFS_v17_p8,FV3_GFS_v17_p8_rrtmgp,FV3_GFS_v15_thompson_mynn_lam3km,FV3_WoFS_v0,FV3_GFS_v17_p8_mynn,FV3_GFS_v17_p8_ugwpv1
+      -D32BIT=ON'}
+  tests:
+  - control_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_p8.v2.sfc:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_p8_ugwpv1:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_restart_p8:
+      dependency: control_p8
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_noqr_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_restart_noqr_p8:
+      dependency: control_noqr_p8
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_decomp_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_2threads_p8:
+      project: [daily]
+      turnoff: [derecho, noaacloud]
+  - control_p8_lndp:
+      project: [daily]
+      turnoff: [derecho, noaacloud]
+  - control_p8_rrtmgp:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_p8_mynn:
+      project: [daily]
+      turnoff: [noaacloud]
+  - merra2_thompson:
+      project: [daily]
+      turnoff: [noaacloud]
+  - regional_control:
+      project: [daily]
+      turnoff: [noaacloud]
+  - regional_restart:
+      dependency: regional_control
+      project: [daily]
+      turnoff: [noaacloud]
+  - regional_decomp:
+      project: [daily]
+      turnoff: [noaacloud]
+  - regional_2threads:
+      project: [daily]
+      turnoff: [derecho, noaacloud]
+  - regional_noquilt:
+      project: [daily]
+      turnoff: [jet, s4]
+  - regional_netcdf_parallel:
+      project: [daily]
+      turnoff: [acorn]
+  - regional_2dwrtdecomp:
+      project: [daily]
+      turnoff: [acorn]
+atm_faster_dyn32_intel:
+  build: {compiler: intel, option: '-DAPP=ATM -DCCPP_SUITES=FV3_GFS_v17_p8,FV3_GFS_v15_thompson_mynn_lam3km
+      -D32BIT=ON -DFASTER=ON'}
+  tests:
+  - control_p8_faster:
+      project: [daily]
+      turnoff: [noaacloud]
+  - regional_control_faster:
+      project: [daily]
+      turnoff: [noaacloud]
+atm_gnu:
+  build: {compiler: gnu, option: '-DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16,FV3_GFS_v16_flake,FV3_GFS_v16_ras,FV3_GFS_v17_p8,FV3_GFS_v17_p8_ugwpv1'}
+  tests:
+  - control_p8:
+      project: [daily]
+  - control_p8_ugwpv1:
+      project: [daily]
+atmaero_intel:
+  build:
+    compiler: intel
+    option: -DAPP=ATMAERO -DCCPP_SUITES=FV3_GFS_v17_p8 -D32BIT=ON
+    turnoff: [noaacloud]
+  tests:
+  - atmaero_control_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+atml_debug_intel:
+  build: {compiler: intel, option: '-DAPP=ATML -DCCPP_SUITES=FV3_GFS_v16,FV3_GFS_v16_flake,FV3_GFS_v17_p8,FV3_GFS_v17_p8_rrtmgp,FV3_GFS_v15_thompson_mynn_lam3km,FV3_WoFS_v0,FV3_GFS_v17_p8_mynn
+      -D32BIT=ON -DDEBUG=ON'}
+  tests:
+  - control_p8_atmlnd_debug:
+      project: [daily]
+      turnoff: [noaacloud]
+atml_intel:
+  build: {compiler: intel, option: '-DAPP=ATML -DCCPP_SUITES=FV3_GFS_v16,FV3_GFS_v16_flake,FV3_GFS_v17_p8,FV3_GFS_v17_p8_rrtmgp,FV3_GFS_v15_thompson_mynn_lam3km,FV3_WoFS_v0,FV3_GFS_v17_p8_mynn
+      -D32BIT=ON'}
+  tests:
+  - control_p8_atmlnd_sbs:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_p8_atmlnd:
+      project: [daily]
+      turnoff: [noaacloud]
+  - control_restart_p8_atmlnd:
+      dependency: control_p8_atmlnd
+      project: [daily]
+      turnoff: [noaacloud]
+atmw_intel:
+  build:
+    compiler: intel
+    option: -DAPP=ATMW -DCCPP_SUITES=FV3_GFS_v17_p8 -D32BIT=ON
+    turnoff: [wcoss2]
+  tests:
+  - atmwav_control_noaero_p8:
+      project: [daily]
+      turnoff: [wcoss2]
+csawmg_gnu:
+  build: {compiler: gnu, option: '-DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_csawmg,FV3_GFS_v16_ras'}
+  tests:
+  - control_csawmg:
+      project: [daily]
+csawmg_intel:
+  build:
+    compiler: intel
+    option: -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_csawmg,FV3_GFS_v16_ras
+    turnoff: [noaacloud]
+  tests:
+  - control_csawmg:
+      project: [daily]
+      turnoff: [noaacloud]
+s2s_aoflux_intel:
+  build: {compiler: intel, option: -DAPP=S2S -DCCPP_SUITES=FV3_GFS_v17_coupled_p8_sfcocn
+      -DCMEPS_AOFLUX=ON}
+  tests:
+  - cpld_control_noaero_p8_agrid:
+      project: [daily]
+s2s_gnu:
+  build: {compiler: gnu, option: -DAPP=S2S -DCCPP_SUITES=FV3_GFS_v17_coupled_p8}
+  tests:
+  - cpld_control_nowave_noaero_p8:
+      project: [daily]
+s2s_intel:
+  build: {compiler: intel, option: -DAPP=S2S -DCCPP_SUITES=FV3_GFS_v17_coupled_p8}
+  tests:
+  - cpld_control_c48:
+      project: [daily]
+s2sw_debug_intel:
+  build:
+    compiler: intel
+    option: -DAPP=S2SW -DDEBUG=ON -DCCPP_SUITES=FV3_GFS_v17_coupled_p8
+    turnoff: [wcoss2, noaacloud, acorn]
+  tests:
+  - cpld_debug_noaero_p8:
+      project: [daily]
+      turnoff: [wcoss2, acorn, noaacloud]
+s2sw_intel:
+  build: {compiler: intel, option: -DAPP=S2SW -DCCPP_SUITES=FV3_GFS_v17_coupled_p8}
+  tests:
+  - cpld_control_noaero_p8:
+      project: [daily]
+  - cpld_control_nowave_noaero_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+s2sw_pdlib_debug_gnu:
+  build: {compiler: gnu, option: -DAPP=S2SW -DCCPP_SUITES=FV3_GFS_v17_coupled_p8 -DPDLIB=ON
+      -DDEBUG=ON}
+  tests:
+  - cpld_debug_pdlib_p8:
+      project: [daily]
+s2sw_pdlib_debug_intel:
+  build:
+    compiler: intel
+    option: -DAPP=S2SW -DCCPP_SUITES=FV3_GFS_v17_coupled_p8 -DPDLIB=ON -DDEBUG=ON
+    turnoff: [noaacloud]
+  tests:
+  - cpld_debug_pdlib_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+s2sw_pdlib_gnu:
+  build: {compiler: gnu, option: -DAPP=S2SW -DCCPP_SUITES=FV3_GFS_v17_coupled_p8 -DPDLIB=ON}
+  tests:
+  - cpld_control_pdlib_p8:
+      project: [daily]
+s2sw_pdlib_intel:
+  build:
+    compiler: intel
+    option: -DAPP=S2SW -DCCPP_SUITES=FV3_GFS_v17_coupled_p8 -DPDLIB=ON
+    turnoff: [noaacloud]
+  tests:
+  - cpld_control_pdlib_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_restart_pdlib_p8:
+      dependency: cpld_control_pdlib_p8
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_mpi_pdlib_p8:
+      dependency: cpld_control_pdlib_p8
+      project: [daily]
+      turnoff: [noaacloud]
+s2swa_32bit_intel:
+  build: {compiler: intel, option: '-DAPP=S2SWA -D32BIT=ON -DCCPP_SUITES=FV3_GFS_v17_coupled_p8,FV3_GFS_v17_coupled_p8_ugwpv1'}
+  tests:
+  - cpld_control_p8_mixedmode:
+      project: [daily]
+      turnoff: [noaacloud]
+s2swa_32bit_pdlib_debug_intel:
+  build:
+    compiler: intel
+    option: -DAPP=S2SWA -D32BIT=ON -DCCPP_SUITES=FV3_GFS_v17_coupled_p8_ugwpv1 -DPDLIB=ON
+      -DDEBUG=ON
+    turnoff: [noaacloud, jet]
+  tests:
+  - cpld_debug_gfsv17:
+      project: [daily]
+      turnoff: [noaacloud, jet]
+s2swa_32bit_pdlib_intel:
+  build:
+    compiler: intel
+    option: -DAPP=S2SWA -D32BIT=ON -DCCPP_SUITES=FV3_GFS_v17_coupled_p8_ugwpv1 -DPDLIB=ON
+    turnoff: [noaacloud]
+  tests:
+  - cpld_control_gfsv17:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_control_gfsv17_iau:
+      dependency: cpld_control_gfsv17
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_restart_gfsv17:
+      dependency: cpld_control_gfsv17
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_mpi_gfsv17:
+      project: [daily]
+      turnoff: [noaacloud]
+s2swa_debug_intel:
+  build:
+    compiler: intel
+    option: -DAPP=S2SWA -DDEBUG=ON -DCCPP_SUITES=FV3_GFS_v17_coupled_p8
+    turnoff: [wcoss2, noaacloud, acorn]
+  tests:
+  - cpld_debug_p8:
+      project: [daily]
+      turnoff: [wcoss2, acorn, noaacloud]
+s2swa_faster_intel:
+  build:
+    compiler: intel
+    option: -DAPP=S2SWA -DCCPP_SUITES=FV3_GFS_v17_coupled_p8 -DFASTER=ON
+    turnoff: [noaacloud]
+  tests:
+  - cpld_control_p8_faster:
+      project: [daily]
+      turnoff: [noaacloud]
+s2swa_intel:
+  build: {compiler: intel, option: -DAPP=S2SWA -DCCPP_SUITES=FV3_GFS_v17_coupled_p8}
+  tests:
+  - cpld_control_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_control_p8.v2.sfc:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_restart_p8:
+      dependency: cpld_control_p8
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_control_qr_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_restart_qr_p8:
+      dependency: cpld_control_qr_p8
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_2threads_p8:
+      project: [daily]
+      turnoff: [derecho, noaacloud]
+  - cpld_decomp_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_mpi_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_control_ciceC_p8:
+      project: [daily]
+      turnoff: [noaacloud]
+  - cpld_control_c192_p8:
+      project: [daily]
+      turnoff: [wcoss2, jet, acorn, s4, noaacloud]
+  - cpld_restart_c192_p8:
+      dependency: cpld_control_c192_p8
+      project: [daily]
+      turnoff: [wcoss2, jet, acorn, s4, noaacloud]
+  - cpld_bmark_p8:
+      project: [daily]
+      turnoff: [s4, jet, acorn, noaacloud]
+  - cpld_restart_bmark_p8:
+      dependency: cpld_bmark_p8
+      project: [daily]
+      turnoff: [s4, jet, acorn, noaacloud]
+  - cpld_s2sa_p8:
+      project: [daily]
+      turnoff: [noaacloud]
