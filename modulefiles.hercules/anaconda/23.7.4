@@ -1,0 +1,17 @@
+#%Module######################################################################
+##
+##      Anaconda modulefile
+##
+proc ModulesHelp { } {
+        puts stderr "Sets up the paths you need to use Anaconda python"
+	}
+set base /work/noaa/epic/jongkim/anaconda3 
+
+prepend-path PATH $base/bin
+prepend-path MANPATH $base/man
+prepend-path MANPATH $base/share/man
+
+setenv ANACONDA $base
+
+setenv PROJ_LIB $base/share/proj
+
