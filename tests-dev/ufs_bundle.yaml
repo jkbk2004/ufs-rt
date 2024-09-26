@@ -1,0 +1,6 @@
+ufs-bundle_intel:
+  build: 
+    compiler: 'intel'
+    option: '-DAPP=S2SWA -D32BIT=ON'
+  tests: 
+    - ufs-bundle-test: {'project':['jedi-build'],'turnon':['hera']}
