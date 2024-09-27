@@ -50,8 +50,10 @@ def finish_log():
                         COMPILE_ID  = apps
                         COMPILE_LOG = 'compile_'+COMPILE_ID+'.log'
                         COMPILE_LOG_TIME ='compile_'+COMPILE_ID+'_timestamp.txt'
+                        COMPILE_CHECK1 ='Compile '+COMPILE_ID+' Completed'
+                        COMPILE_CHECK2 ='[100%] Linking Fortran executable'
                         with open('./logs/log_'+MACHINE_ID+'/'+COMPILE_LOG) as f:
-                            if "[100%] Linking Fortran executable" in f.read():
+                            if COMPILE_CHECK1 in f.read() or COMPILE_CHECK2 in f.read():                        
                                 COMPILE_PASS += 1
                                 f.seek(0)
                                 for line in f:
