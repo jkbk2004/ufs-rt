@@ -1,0 +1,639 @@
+ 0: NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to    32768.
+ 0: &MPP_IO_NML
+ 0:  HEADER_BUFFER_VAL=16384      ,
+ 0:  GLOBAL_FIELD_ON_ROOT_PE=T,
+ 0:  IO_CLOCKS_ON=F,
+ 0:  SHUFFLE=0          ,
+ 0:  DEFLATE_LEVEL=-1         ,
+ 0:  CF_COMPLIANCE=F,
+ 0:  /
+ 0: NOTE from PE     0: MPP_IO_SET_STACK_SIZE: stack size set to     131072.
+ 0: NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to 40000000.
+ 4:  Cubic: cubed-sphere domain decomposition
+ 4: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+ 4:   X-AXIS =   96
+ 4:   Y-AXIS =   24  24  24  24
+ 0:  Cubic: cubed-sphere domain decomposition
+ 0: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+ 0:   X-AXIS =   96
+ 0:   Y-AXIS =   24  24  24  24
+ 8:  Cubic: cubed-sphere domain decomposition
+ 8: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+ 8:   X-AXIS =   96
+ 8:   Y-AXIS =   24  24  24  24
+12:  Cubic: cubed-sphere domain decomposition
+12: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+12:   X-AXIS =   96
+12:   Y-AXIS =   24  24  24  24
+16:  Cubic: cubed-sphere domain decomposition
+16: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+16:   X-AXIS =   96
+16:   Y-AXIS =   24  24  24  24
+20:  Cubic: cubed-sphere domain decomposition
+20: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+20:   X-AXIS =   96
+20:   Y-AXIS =   24  24  24  24
+ 8:  Cubic: cubed-sphere domain decomposition
+ 8: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+ 8:   X-AXIS =   96
+ 8:   Y-AXIS =   24  24  24  24
+ 4:  Cubic: cubed-sphere domain decomposition
+ 4: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+ 4:   X-AXIS =   96
+ 4:   Y-AXIS =   24  24  24  24
+ 0:  Cubic: cubed-sphere domain decomposition
+ 0: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+ 0:   X-AXIS =   96
+ 0:   Y-AXIS =   24  24  24  24
+16:  Cubic: cubed-sphere domain decomposition
+16: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+16:   X-AXIS =   96
+16:   Y-AXIS =   24  24  24  24
+12:  Cubic: cubed-sphere domain decomposition
+12: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+12:   X-AXIS =   96
+12:   Y-AXIS =   24  24  24  24
+20:  Cubic: cubed-sphere domain decomposition
+20: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+20:   X-AXIS =   96
+20:   Y-AXIS =   24  24  24  24
+ 0: 
+ 0: WARNING from PE     0: The function named string has been moved from fms_io_mod to fms_mod.  Please update your call.
+ 0: 
+ 5:  nx,ny=          96          24
+ 5:  calling init_stochastic_physics           3
+ 6:  nx,ny=          96          24
+ 6:  calling init_stochastic_physics           3
+ 1:  nx,ny=          96          24
+ 1:  calling init_stochastic_physics           3
+ 2:  nx,ny=          96          24
+ 2:  calling init_stochastic_physics           3
+ 7:  nx,ny=          96          24
+ 7:  calling init_stochastic_physics           3
+18:  nx,ny=          96          24
+18:  calling init_stochastic_physics           3
+ 4:  nx,ny=          96          24
+ 4:  calling init_stochastic_physics           3
+ 3:  nx,ny=          96          24
+ 3:  calling init_stochastic_physics           3
+14:  nx,ny=          96          24
+14:  calling init_stochastic_physics           3
+ 0:  nx,ny=          96          24
+ 0:  calling init_stochastic_physics           3
+12:  nx,ny=          96          24
+12:  calling init_stochastic_physics           3
+ 0:   in compns_stochy
+ 0:  spp_lscale=   250000.00000000000        250000.00000000000        250000.00000000000        250000.00000000000        250000.00000000000       -999.00000000000000     
+ 0:  spp_tau=   21600.000000000000        21600.000000000000        21600.000000000000        21600.000000000000        21600.000000000000       -999.00000000000000     
+ 0:  spp_stddev_cutoff=   1.5000000000000000        1.5000000000000000        2.5000000000000000        1.5000000000000000        1.5000000000000000        0.0000000000000000     
+ 0:  ntrunc not supplied, calculating
+ 0:  ntrunc calculated from l_min   250000.00000000000              160
+ 0:  NOTE ntrunc adjusted for even nlats         162
+ 0:  gaussian grid not set, defining here         984         488
+ 0:  land perturbations will be applied to selected paramaters, using newer scheme designed for DA ens spread
+ 0:  land perturbation will be applied to vgf
+ 0:  land perturbation will be applied to smc
+ 0:  SPP physics perturbations will be applied to selected parameters           5
+ 0:  SPP physics perturbation will be applied to pbl       
+ 0:  SPP physics perturbation will be applied to sfc       
+ 0:  SPP physics perturbation will be applied to mp        
+ 0:  SPP physics perturbation will be applied to rad       
+ 0:  SPP physics perturbation will be applied to gwd       
+ 0:  stochastic physics
+ 0:   do_sppt :  T
+ 0:   do_shum :  T
+ 0:   do_skeb :  T
+ 0:   lndp_type :            2
+ 0:   lndp_model_type :            1
+ 0:   n_var_lndp :            2
+ 0:   do_spp  :  T
+ 0:   n_var_spp :            5
+15:  nx,ny=          96          24
+15:  calling init_stochastic_physics           3
+19:  nx,ny=          96          24
+19:  calling init_stochastic_physics           3
+17:  nx,ny=          96          24
+17:  calling init_stochastic_physics           3
+13:  nx,ny=          96          24
+13:  calling init_stochastic_physics           3
+16:  nx,ny=          96          24
+ 8:  nx,ny=          96          24
+ 8:  calling init_stochastic_physics           3
+16:  calling init_stochastic_physics           3
+ 9:  nx,ny=          96          24
+ 9:  calling init_stochastic_physics           3
+23:  nx,ny=          96          24
+23:  calling init_stochastic_physics           3
+21:  nx,ny=          96          24
+21:  calling init_stochastic_physics           3
+22:  nx,ny=          96          24
+22:  calling init_stochastic_physics           3
+20:  nx,ny=          96          24
+20:  calling init_stochastic_physics           3
+11:  nx,ny=          96          24
+11:  calling init_stochastic_physics           3
+10:  nx,ny=          96          24
+10:  calling init_stochastic_physics           3
+ 0:  nsppt =            3
+ 0:  nshum =            1
+ 0:  nskeb =            1
+ 0:   nlndp   =            1
+ 0:   nspp   =            5
+ 0:  Initialize random pattern for SPPT
+ 0:  calling init         984         488         162
+ 6:  calling init         984         488         162
+ 0:  using seed           3                    3
+16:  calling init         984         488         162
+ 0:  using seed   200000003            200000003
+14:  calling init         984         488         162
+20:  calling init         984         488         162
+ 0:  using seed   300000003            300000003
+ 5:  calling init         984         488         162
+12:  calling init         984         488         162
+10:  calling init         984         488         162
+22:  calling init         984         488         162
+ 4:  calling init         984         488         162
+ 8:  calling init         984         488         162
+ 0:  Initialize random pattern for SHUM
+ 0:  using seed           1                    1
+ 1:  calling init         984         488         162
+ 7:  calling init         984         488         162
+ 0:  Initialize random pattern for SKEB
+ 3:  calling init         984         488         162
+18:  calling init         984         488         162
+21:  calling init         984         488         162
+ 0:  using seed           2                    2
+13:  calling init         984         488         162
+ 9:  calling init         984         488         162
+19:  calling init         984         488         162
+15:  calling init         984         488         162
+23:  calling init         984         488         162
+11:  calling init         984         488         162
+17:  calling init         984         488         162
+ 2:  calling init         984         488         162
+ 0:  using kenorm    1.0000000000000000        0.0000000000000000     
+ 0:  Initialize random pattern for SFC-PERTS
+ 0:  using seed           4                    4
+ 0:  Initialize random pattern for LNDP PERTS
+ 0:  lndp pattern initialized,            1           1  -3.0566036920282046E-002   7.9338342283662933E-002
+ 0:  lndp pattern initialized,            1           2  -5.3995000725870393E-002   6.0595287014299608E-002
+ 0:  Initialize random pattern for SPP-PERTS
+ 0:  using seed           4                    4
+ 0:  using seed           4                    4
+ 0:  using seed           4                    4
+ 0:  using seed           4                    4
+ 0:  using seed           4                    4
+ 0:  Initialize random pattern for SPP PERTS
+ 0:  spp pattern initialized,            1           1  -3.0566036920282046E-002   7.9338342283662933E-002
+ 0:  Initialize random pattern for SPP PERTS
+ 0:  spp pattern initialized,            2           1  -3.0566036920282046E-002   7.9338342283662933E-002
+ 0:  Initialize random pattern for SPP PERTS
+ 0:  spp pattern initialized,            3           1  -3.0566036920282046E-002   7.9338342283662933E-002
+ 0:  Initialize random pattern for SPP PERTS
+ 0:  spp pattern initialized,            4           1  -3.0566036920282046E-002   7.9338342283662933E-002
+ 0:  Initialize random pattern for SPP PERTS
+ 0:  spp pattern initialized,            5           1  -3.0566036920282046E-002   7.9338342283662933E-002
+ 0:  sppt vert profile           1  0.96571110019743345        0.0000000000000000     
+ 0:  sppt vert profile           2  0.53994541609081936       0.50000000000000000     
+ 0:  sppt vert profile           3   7.4239202369200383E-002   1.0000000000000000     
+ 0:  skeb vert profile           1  0.96571110019743345        1.0000000000000000     
+ 0:  skeb vert profile           2  0.53994541609081936        1.0000000000000000     
+ 0:  skeb vert profile           3   7.4239202369200383E-002  0.65652269825600496     
+ 0:  skeb vpts            1   0.0000000000000000     
+ 0:  skeb vpts           86  0.49014011630493520     
+ 0:  skeb vpts          178   1.0000000000000000     
+ 0:  shum vert profile           1  0.96571110019743345       0.84244702336396116     
+ 0:  shum vert profile           2  0.53994541609081936       0.10023148485825641     
+ 0:  shum vert profile           3   7.4239202369200383E-002   0.0000000000000000     
+ 0:  spp vert profile           1  0.96571110019743345        1.0000000000000000     
+ 0:  spp vert profile           2  0.53994541609081936        1.0000000000000000     
+ 0:  spp vert profile           3   7.4239202369200383E-002  0.65652269825600496     
+ 0:  workg_T162_984x488.tile01.nc T
+16:  workg_T162_984x488.tile17.nc T
+20:  workg_T162_984x488.tile21.nc T
+22:  workg_T162_984x488.tile23.nc T
+ 5:  workg_T162_984x488.tile06.nc T
+ 4:  workg_T162_984x488.tile05.nc T
+ 6:  workg_T162_984x488.tile07.nc T
+10:  workg_T162_984x488.tile11.nc T
+12:  workg_T162_984x488.tile13.nc T
+14:  workg_T162_984x488.tile15.nc T
+ 8:  workg_T162_984x488.tile09.nc T
+ 1:  workg_T162_984x488.tile02.nc T
+ 7:  workg_T162_984x488.tile08.nc T
+18:  workg_T162_984x488.tile19.nc T
+21:  workg_T162_984x488.tile22.nc T
+13:  workg_T162_984x488.tile14.nc T
+ 9:  workg_T162_984x488.tile10.nc T
+15:  workg_T162_984x488.tile16.nc T
+19:  workg_T162_984x488.tile20.nc T
+23:  workg_T162_984x488.tile24.nc T
+17:  workg_T162_984x488.tile18.nc T
+11:  workg_T162_984x488.tile12.nc T
+ 2:  workg_T162_984x488.tile03.nc T
+ 3:  workg_T162_984x488.tile04.nc T
+ 0:  SPPT_WTS=           1  0.95252114977298208     
+ 0:  writing sppt_wts=           1  0.95252114977298208     
+ 0:  SPPT_WTS=           2  0.88547176380663617     
+ 0:  SPPT_WTS=           3  0.83900132959086382     
+ 0:  SPPT_WTS=           4  0.85956620361362446     
+ 0:  SPPT_WTS=           5  0.88185211852362211     
+ 0:  SPPT_WTS=           6  0.93553458620547225     
+ 0:  SPPT_WTS=           7  0.90359924164896788     
+ 0:  SPPT_WTS=           8  0.92248496692693038     
+ 0:  SPPT_WTS=           9  0.92203326995983159     
+ 0:  SPPT_WTS=          10  0.87082100634228121     
+ 0:  writing out random pattern (min/max/size) -0.12051979435215134       0.17769072043544332            26732
+ 0:  writing out random pattern (min/max/size)  -7.2141369822072310E-002   8.8240260137194187E-002       26732
+ 0:  writing out random pattern (min/max/size)  -3.3498351288622032E-002   3.3358149842662374E-002       26732
+ 0:  writing out random pattern (min/max/size)  -2.7020018547707842E-004   3.6109726673367345E-004       26732
+ 0:  writing out random pattern (min/max/size)  -7.9153293901477930E-003   8.9397795030190415E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.3551747853159129E-003   8.7808901916179502E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.3237954921976023E-003   8.3111234922393067E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.1249326313303149E-003   7.5847461017201044E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.8017847898972700E-003   6.6070804208546814E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0547617078536891E-002   6.6838539193515680E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1587492678811338E-002   6.6993251760756427E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.8979261980898757E-003   7.5119917394267472E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.7388421527736307E-003   7.5686153856511819E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.5687697564103289E-003   6.9105079847725567E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.8356283025730099E-003   6.2262364699934404E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1219312888237333E-002   6.9345889455788854E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1441768719128692E-002   6.7089442062493454E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0899273016093112E-002   7.2152326430022142E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.6959721435911639E-003   7.4959131748776305E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.2165816485314080E-003   7.3614142161337725E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.7418064268206773E-003   7.8420473208302803E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.1616282203830597E-003   7.8218575862560348E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0133865559410874E-002   7.8879066747563446E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0496510141731873E-002   7.6161781269997878E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1003875584288005E-002   7.0178609901216651E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2024025980459317E-002   6.7557269194370717E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2673957989224435E-002   7.6420811709445166E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.3528726215906301E-002   6.5867804760286084E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1848491060624975E-002   6.9189635022504940E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0723873387525342E-002   6.5304152389673471E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1946917981963342E-002   6.4489253333661675E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2240898597780072E-002   6.5839894952164461E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2762383474792534E-002   6.1506951267832309E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0903550672566110E-002   5.3352727044016441E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.5116588924267116E-003   7.3475689452703191E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1235877634467893E-002   7.0013470390514329E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.9110278240252328E-003   6.2642613180654153E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.4582172585315032E-003   6.7326250453297971E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.5877383787859368E-003   6.1957253453800232E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.7059659176187817E-003   6.2557950049761729E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.2199367700067716E-003   7.0854118521099354E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.5765956952007193E-003   7.2603407074138199E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2487799554127640E-003   6.3111400738819204E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1736783911712006E-003   5.1681096638640876E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7529968946022575E-003   5.4572727707343296E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0628920350259581E-003   8.9637547828051688E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.0721374249934155E-003   8.2740898534841619E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6354945639099374E-003   7.7545138279984842E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.8416552933716537E-003   8.9940758421922021E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.7248808988405592E-003   8.8137484085945572E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.2852689479965234E-003   8.7593454346514103E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.2040477963142419E-003   7.9216056842203522E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.3185185889229031E-003   9.8936448037740352E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.9719974501834415E-003   8.9846040494978383E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.0553986818064499E-003   8.8720497473805983E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6006521980601623E-003   1.0334672427042724E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.5196669284351035E-003   1.0104018535761075E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.2899485312544832E-003   8.8050910703979142E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.3859376637548458E-003   9.5448356613938735E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9119459876991309E-003   1.1387938963193331E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.5333836298494316E-003   1.1696427063368729E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.1751397189086892E-003   1.2312984535160002E-002       26732
+ 0:  writing out random pattern (min/max/size)  -8.0195365146193930E-003   1.0118515940829428E-002       26732
+ 0:  writing out random pattern (min/max/size)  -8.0113710038927158E-003   9.8368128799815602E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.4418085779805821E-003   7.4056889786973832E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6330029973376151E-003   8.1511326566836365E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.4297448303400105E-003   9.7663133913431493E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0857646465951026E-003   7.5545227580668855E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.5250341855398663E-003   7.5276900325251571E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2818545420631573E-003   6.7733167991217945E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4640390765379084E-003   6.4724112300814955E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8347040256829371E-003   7.8861259719134689E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9651398089132797E-003   8.6395468976751561E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.6921504686640026E-003   8.6354409532948227E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.0452538597780721E-003   7.8598578384534001E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1773263104320762E-003   7.8925763005226208E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.0096350425327093E-003   8.0386701604903583E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.9633316401227548E-003   7.3031030264840650E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1479173636369401E-003   7.2953637008694424E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7414341118464853E-003   7.3827860089300257E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9764726883492362E-003   6.9509455095100739E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8806816573470531E-003   7.4526242730656020E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8404795704626016E-003   7.7205426914629775E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3070358754749693E-003   6.9796170544577929E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2210467457211203E-003   7.0545040581356791E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.8054946596648588E-003   7.0376303831181271E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0729624066543243E-003   7.6528202626679163E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0132229518851440E-003   7.8460403203265347E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9635273067568557E-003   7.9674030081395199E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3984714706493070E-003   7.7550282820870436E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.5002823442748799E-003   6.7605036223972632E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6421816596696848E-003   6.8163298448617772E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.8503127031944938E-003   5.9332530195854959E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5346976653925032E-003   5.3226258599646040E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2364899592097442E-003   6.3217828947210487E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9758946502691083E-003   6.8905219817583380E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9396840501599064E-003   5.8882995528740292E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6441051015835722E-003   6.1100542874924068E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.4198848690296597E-003   7.1147570497109543E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2976870911851121E-003   6.3810914896115685E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3518654731718237E-003   6.1658247715792322E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5157474564421364E-003   6.5397834483271692E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.1540262765805345E-003   6.3373979228712367E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6688962852620559E-003   4.7417581690824386E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1468918574876450E-003   5.1892788014014099E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.3302988350303624E-003   4.9729917908931456E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.2867751624847736E-003   4.6671720847887887E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.3772190450738691E-003   4.6291893663001965E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.8876046003615785E-003   4.8617372879965516E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2643042858591758E-003   5.4444611286305362E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5930676243450325E-003   5.5735897035624005E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6126233086620488E-003   6.8654500957654211E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9864261994204329E-003   6.3057498019711998E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.4192896897161661E-003   7.5490884733592821E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.0998658373133232E-003   6.2433724925569072E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1160221312116219E-003   6.4326878646024498E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.7603106869403911E-003   7.5658434201311287E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1906137528762268E-003   5.9206443096840233E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0629662240884313E-003   7.2033031914521999E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4753270087187587E-003   6.8312466181830976E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.3408392463141661E-003   8.3592279591397801E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.2496871237613964E-003   8.7345849826001472E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.9599075286287480E-003   8.4171094503018434E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.6317838265369973E-003   8.5062925238665894E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.1182682274616950E-003   6.8946185321580259E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.3821117980682428E-003   7.1479076506765736E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9801475269404617E-003   7.2681946495378683E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.5211618046326393E-003   7.4123165330031065E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.6613002779680255E-003   7.3986250844647172E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1565098357226579E-003   6.0581755157038137E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.7110505299516005E-003   6.0444969234382719E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.0176979161556156E-003   6.3943105141603517E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3995950478706945E-003   6.1623093632793184E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3074193524618911E-003   7.3807856083445544E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.6199859304763332E-003   6.2676363050830327E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3284593614730605E-003   4.8436552439398463E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1740908765808853E-003   4.7729766980568467E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0171007520637082E-003   4.9133405627796662E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0246682921862443E-003   4.6140696423803071E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.9999012057162957E-003   4.3641813423223805E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7154759979922065E-003   3.7710493454577005E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.5414793180807286E-003   3.7748505097970667E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1066113104083705E-003   3.1264559770628197E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.5190414026193065E-003   3.1648143552003363E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.0671739966350066E-003   3.6763651501792458E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.5111988738183659E-003   3.7632022390193883E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.3188244292478011E-003   4.2159847431987958E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8858717268285739E-003   4.3714576021624003E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.8501620275392078E-003   4.7935977963146515E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6642700621746013E-003   4.4006904855904347E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5564810681982191E-003   4.6597113835621963E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.6077806227604436E-003   4.8637906321283546E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1501761730309657E-003   4.5621653462605419E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.2157297966259949E-003   4.5054136463241390E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.1274515563775463E-003   4.8630323239697961E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.1802582178977190E-003   5.3428792283070677E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.2652221457714426E-003   5.0450879097271497E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4779830447570866E-003   5.7130288739704630E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.0178246128420294E-003   5.9834184015697938E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7083006499167362E-003   8.4224790815242926E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.8353970667755356E-003   1.0169694161078699E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.5877790600524727E-003   1.0057352777598283E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.4458278170005847E-003   1.0949057165666090E-002       26732
+ 0:  writing out random pattern (min/max/size)  -6.0197748306233473E-003   1.0473863745872496E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.9515040364295571E-003   1.0348323271805274E-002       26732
+ 0:  writing out random pattern (min/max/size)  -6.9945915248481707E-003   8.4301717652701808E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.8472883686134262E-003   1.0233848628446580E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.6108827546764491E-003   8.9632297167506585E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6430521502190871E-003   8.7764277109080961E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4849842996482360E-003   7.3483904091311072E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.5153737754998306E-003   6.0446303204863567E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1798673730053101E-003   7.0514363007087013E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2110271992583963E-003   7.3466059165643366E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.3742510981188473E-003   7.0215192284633588E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3520634877078652E-003   5.9186397478981573E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2544326888106794E-003   4.2488447883954339E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1952398168766973E-003   4.3244545766769771E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1137150011114334E-003   5.0917350330473964E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.7442121043612491E-003   6.4657095743295917E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.4845357777777810E-003   6.9055473095786003E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2085801715156047E-003   6.2827342550445964E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4594911325490814E-003   6.0028940781308342E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.7794401471989599E-003   6.3286582533214446E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1856402239914912E-003   5.0620836256286784E-003       26732
+ 0:  writing out random pattern (min/max/size) -0.10223640013336681       0.12650999412882302            26732
+ 0:  writing out random pattern (min/max/size)  -7.4135304456400611E-002   9.8194402528576391E-002       26732
+ 0:  writing out random pattern (min/max/size)  -9.6773403830227298E-002  0.10471313902301214            26732
+ 0:  writing out random pattern (min/max/size)  -9.6773403830227298E-002  0.10471313902301214            26732
+ 0:  writing out random pattern (min/max/size)  -9.6773403830227298E-002  0.10471313902301214            26732
+ 0:  writing out random pattern (min/max/size)  -9.6773403830227298E-002  0.10471313902301214            26732
+ 0:  writing out random pattern (min/max/size)  -9.6773403830227298E-002  0.10471313902301214            26732
+ 0:  SPPT_WTS=          11  0.97980811670446732     
+ 0:  SPPT_WTS=          12   1.0668084090593704     
+ 0:  SPPT_WTS=          13   1.0492427340971655     
+ 0:  SPPT_WTS=          14   1.0398967184766745     
+ 0:  SPPT_WTS=          15  0.96394227561629009     
+ 0:  SPPT_WTS=          16  0.87878463534490747     
+ 0:  SPPT_WTS=          17  0.91769770991808963     
+ 0:  SPPT_WTS=          18  0.98708616145457795     
+ 0:  SPPT_WTS=          19   1.0303662098854136     
+ 0:  SPPT_WTS=          20  0.99157567897652577     
+ 0:  writing sppt_wts=          20  0.99157567897652577     
+ 0:  SPPT_WTS=          21  0.92427926527771231     
+ 0:  writing out random pattern (min/max/size) -0.13448498233648365       0.15531065689970608            26732
+ 0:  writing out random pattern (min/max/size) -0.11955948670586661        8.7952491659896409E-002       26732
+ 0:  writing out random pattern (min/max/size)  -4.5925579560578265E-002   2.7501125475647460E-002       26732
+ 0:  writing out random pattern (min/max/size)  -2.4947589180256634E-004   2.4144793087245713E-004       26732
+ 0:  writing out random pattern (min/max/size)  -1.1219312888237333E-002   6.9345889455788854E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1441768719128692E-002   6.7089442062493454E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0899273016093112E-002   7.2152326430022142E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.6959721435911639E-003   7.4959131748776305E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.2165816485314080E-003   7.3614142161337725E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.7418064268206773E-003   7.8420473208302803E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.1616282203830597E-003   7.8218575862560348E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0133865559410874E-002   7.8879066747563446E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0496510141731873E-002   7.6161781269997878E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1003875584288005E-002   7.0178609901216651E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2024025980459317E-002   6.7557269194370717E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2673957989224435E-002   7.6420811709445166E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.3528726215906301E-002   6.5867804760286084E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1848491060624975E-002   6.9189635022504940E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0723873387525342E-002   6.5304152389673471E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1946917981963342E-002   6.4489253333661675E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2240898597780072E-002   6.5839894952164461E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.2762383474792534E-002   6.1506951267832309E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.0903550672566110E-002   5.3352727044016441E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.5116588924267116E-003   7.3475689452703191E-003       26732
+ 0:  writing out random pattern (min/max/size)  -1.1235877634467893E-002   7.0013470390514329E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.9110278240252328E-003   6.2642613180654153E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.4582172585315032E-003   6.7326250453297971E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.5877383787859368E-003   6.1957253453800232E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.7059659176187817E-003   6.2557950049761729E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.2199367700067716E-003   7.0854118521099354E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.5765956952007193E-003   7.2603407074138199E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2487799554127640E-003   6.3111400738819204E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1736783911712006E-003   5.1681096638640876E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7529968946022575E-003   5.4572727707343296E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0628920350259581E-003   8.9637547828051688E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.0721374249934155E-003   8.2740898534841619E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6354945639099374E-003   7.7545138279984842E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.8416552933716537E-003   8.9940758421922021E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.7248808988405592E-003   8.8137484085945572E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.2852689479965234E-003   8.7593454346514103E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.2040477963142419E-003   7.9216056842203522E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.3185185889229031E-003   9.8936448037740352E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.9719974501834415E-003   8.9846040494978383E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.0553986818064499E-003   8.8720497473805983E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6006521980601623E-003   1.0334672427042724E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.5196669284351035E-003   1.0104018535761075E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.2899485312544832E-003   8.8050910703979142E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.3859376637548458E-003   9.5448356613938735E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9119459876991309E-003   1.1387938963193331E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.5333836298494316E-003   1.1696427063368729E-002       26732
+ 0:  writing out random pattern (min/max/size)  -7.1751397189086892E-003   1.2312984535160002E-002       26732
+ 0:  writing out random pattern (min/max/size)  -8.0195365146193930E-003   1.0118515940829428E-002       26732
+ 0:  writing out random pattern (min/max/size)  -8.0113710038927158E-003   9.8368128799815602E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.4418085779805821E-003   7.4056889786973832E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6330029973376151E-003   8.1511326566836365E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.4297448303400105E-003   9.7663133913431493E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0857646465951026E-003   7.5545227580668855E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.5250341855398663E-003   7.5276900325251571E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2818545420631573E-003   6.7733167991217945E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4640390765379084E-003   6.4724112300814955E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8347040256829371E-003   7.8861259719134689E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9651398089132797E-003   8.6395468976751561E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.6921504686640026E-003   8.6354409532948227E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.0452538597780721E-003   7.8598578384534001E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1773263104320762E-003   7.8925763005226208E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.0096350425327093E-003   8.0386701604903583E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.9633316401227548E-003   7.3031030264840650E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1479173636369401E-003   7.2953637008694424E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7414341118464853E-003   7.3827860089300257E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9764726883492362E-003   6.9509455095100739E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8806816573470531E-003   7.4526242730656020E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8404795704626016E-003   7.7205426914629775E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3070358754749693E-003   6.9796170544577929E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2210467457211203E-003   7.0545040581356791E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.8054946596648588E-003   7.0376303831181271E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0729624066543243E-003   7.6528202626679163E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0132229518851440E-003   7.8460403203265347E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9635273067568557E-003   7.9674030081395199E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3984714706493070E-003   7.7550282820870436E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.5002823442748799E-003   6.7605036223972632E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6421816596696848E-003   6.8163298448617772E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.8503127031944938E-003   5.9332530195854959E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5346976653925032E-003   5.3226258599646040E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2364899592097442E-003   6.3217828947210487E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9758946502691083E-003   6.8905219817583380E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.9396840501599064E-003   5.8882995528740292E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6441051015835722E-003   6.1100542874924068E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.4198848690296597E-003   7.1147570497109543E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2976870911851121E-003   6.3810914896115685E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3518654731718237E-003   6.1658247715792322E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5157474564421364E-003   6.5397834483271692E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.1540262765805345E-003   6.3373979228712367E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6688962852620559E-003   4.7417581690824386E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1468918574876450E-003   5.1892788014014099E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.3302988350303624E-003   4.9729917908931456E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.2867751624847736E-003   4.6671720847887887E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.3772190450738691E-003   4.6291893663001965E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.8876046003615785E-003   4.8617372879965516E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2643042858591758E-003   5.4444611286305362E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5930676243450325E-003   5.5735897035624005E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6126233086620488E-003   6.8654500957654211E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9864261994204329E-003   6.3057498019711998E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.4192896897161661E-003   7.5490884733592821E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.0998658373133232E-003   6.2433724925569072E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1160221312116219E-003   6.4326878646024498E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.7603106869403911E-003   7.5658434201311287E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.1906137528762268E-003   5.9206443096840233E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0629662240884313E-003   7.2033031914521999E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4753270087187587E-003   6.8312466181830976E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.3408392463141661E-003   8.3592279591397801E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.2496871237613964E-003   8.7345849826001472E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.9599075286287480E-003   8.4171094503018434E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.6317838265369973E-003   8.5062925238665894E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.1182682274616950E-003   6.8946185321580259E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.3821117980682428E-003   7.1479076506765736E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9801475269404617E-003   7.2681946495378683E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.5211618046326393E-003   7.4123165330031065E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.6613002779680255E-003   7.3986250844647172E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1565098357226579E-003   6.0581755157038137E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.7110505299516005E-003   6.0444969234382719E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.0176979161556156E-003   6.3943105141603517E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3995950478706945E-003   6.1623093632793184E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3074193524618911E-003   7.3807856083445544E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.6199859304763332E-003   6.2676363050830327E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3284593614730605E-003   4.8436552439398463E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1740908765808853E-003   4.7729766980568467E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0171007520637082E-003   4.9133405627796662E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.0246682921862443E-003   4.6140696423803071E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.9999012057162957E-003   4.3641813423223805E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7154759979922065E-003   3.7710493454577005E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.5414793180807286E-003   3.7748505097970667E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1066113104083705E-003   3.1264559770628197E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.5190414026193065E-003   3.1648143552003363E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.0671739966350066E-003   3.6763651501792458E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.5111988738183659E-003   3.7632022390193883E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.3188244292478011E-003   4.2159847431987958E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.8858717268285739E-003   4.3714576021624003E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.8501620275392078E-003   4.7935977963146515E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6642700621746013E-003   4.4006904855904347E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5564810681982191E-003   4.6597113835621963E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.6077806227604436E-003   4.8637906321283546E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1501761730309657E-003   4.5621653462605419E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.2157297966259949E-003   4.5054136463241390E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.1274515563775463E-003   4.8630323239697961E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.1802582178977190E-003   5.3428792283070677E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.2652221457714426E-003   5.0450879097271497E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4779830447570866E-003   5.7130288739704630E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.0178246128420294E-003   5.9834184015697938E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.7083006499167362E-003   8.4224790815242926E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.8353970667755356E-003   1.0169694161078699E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.5877790600524727E-003   1.0057352777598283E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.4458278170005847E-003   1.0949057165666090E-002       26732
+ 0:  writing out random pattern (min/max/size)  -6.0197748306233473E-003   1.0473863745872496E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.9515040364295571E-003   1.0348323271805274E-002       26732
+ 0:  writing out random pattern (min/max/size)  -6.9945915248481707E-003   8.4301717652701808E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.8472883686134262E-003   1.0233848628446580E-002       26732
+ 0:  writing out random pattern (min/max/size)  -5.6108827546764491E-003   8.9632297167506585E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.6430521502190871E-003   8.7764277109080961E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4849842996482360E-003   7.3483904091311072E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.5153737754998306E-003   6.0446303204863567E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1798673730053101E-003   7.0514363007087013E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2110271992583963E-003   7.3466059165643366E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.3742510981188473E-003   7.0215192284633588E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.3520634877078652E-003   5.9186397478981573E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.2544326888106794E-003   4.2488447883954339E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1952398168766973E-003   4.3244545766769771E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1137150011114334E-003   5.0917350330473964E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.7442121043612491E-003   6.4657095743295917E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.4845357777777810E-003   6.9055473095786003E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.2085801715156047E-003   6.2827342550445964E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.4594911325490814E-003   6.0028940781308342E-003       26732
+ 0:  writing out random pattern (min/max/size)  -4.7794401471989599E-003   6.3286582533214446E-003       26732
+ 0:  writing out random pattern (min/max/size)  -5.1856402239914912E-003   5.0620836256286784E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.7566011737715936E-003   5.7917418260872685E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.3718450583462047E-003   5.6752585944890438E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.7347491601543151E-003   6.9442742723678178E-003       26732
+ 0:  writing out random pattern (min/max/size)  -9.0204103977783393E-003   5.1454589149476397E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.6027378180660091E-003   5.0964695341745719E-003       26732
+ 0:  writing out random pattern (min/max/size)  -6.5199042499080968E-003   5.4220506473626889E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.8380181369148982E-003   5.4231293696355657E-003       26732
+ 0:  writing out random pattern (min/max/size)  -8.0781391144306835E-003   5.8155077529100201E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.4591968047576021E-003   5.8936085759071664E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.9024075051896958E-003   6.1587592560721710E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.1733981088193156E-003   5.8354260330348131E-003       26732
+ 0:  writing out random pattern (min/max/size)  -7.5702773355223574E-002  0.10484942885099997            26732
+ 0:  writing out random pattern (min/max/size)  -9.0774329049032515E-002   9.1895034419760296E-002       26732
+ 0:  writing out random pattern (min/max/size) -0.11364346501222908        9.5398641724306205E-002       26732
+ 0:  writing out random pattern (min/max/size) -0.11364346501222908        9.5398641724306205E-002       26732
+ 0:  writing out random pattern (min/max/size) -0.11364346501222908        9.5398641724306205E-002       26732
+ 0:  writing out random pattern (min/max/size) -0.11364346501222908        9.5398641724306205E-002       26732
+ 0:  writing out random pattern (min/max/size) -0.11364346501222908        9.5398641724306205E-002       26732
