@@ -1,0 +1,15 @@
+                   Test_Framework_Type  Number of Tests  ...  Platform   Compiler
+Gaeac6 + intel     Regression Testing              204  ...    Gaeac6      intel
+Derecho + intel    Regression Testing              204  ...   Derecho      intel
+Wcoss2 + intel     Regression Testing              176  ...    Wcoss2      intel
+Hera + intel       Regression Testing              210  ...      Hera      intel
+Acorn + intel      Regression Testing              199  ...     Acorn      intel
+Hercules + intel   Regression Testing              205  ...  Hercules      intel
+Orion + intel      Regression Testing              209  ...     Orion      intel
+Ursa + intel       Regression Testing              208  ...      Ursa      intel
+Ursa + gnu         Regression Testing               64  ...      Ursa        gnu
+Hercules + gnu     Regression Testing               64  ...  Hercules        gnu
+Hera + gnu         Regression Testing               64  ...      Hera        gnu
+Ursa + intelllvm   Regression Testing               10  ...      Ursa  intelllvm
+Hera + intelllvm   Regression Testing                2  ...      Hera  intelllvm
+Orion + intelllvm  Regression Testing                1  ...     Orion  intelllvm

@@ -1,0 +1,14 @@
+Gaeac6 + intel      204      Gaeac6      intel
+Derecho + intel     204     Derecho      intel
+Wcoss2 + intel      176      Wcoss2      intel
+Hera + intel        210        Hera      intel
+Acorn + intel       199       Acorn      intel
+Hercules + intel    205    Hercules      intel
+Orion + intel       209       Orion      intel
+Ursa + intel        208        Ursa      intel
+Ursa + gnu           64        Ursa        gnu
+Hercules + gnu       64    Hercules        gnu
+Hera + gnu           64        Hera        gnu
+Ursa + intelllvm     10        Ursa  intelllvm
+Hera + intelllvm      2        Hera  intelllvm
+Orion + intelllvm     1       Orion  intelllvm
